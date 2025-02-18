@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=8                # 每个任务的CPU核心数
 #SBATCH --gres=gpu:1                     # 请求GPU（可以根据需求调整）
 #SBATCH --time=72:00:00                  # 设置作业的最大运行时间
-#SBATCH --mem=64G                        # 分配内存大小
+#SBATCH --mem=128G                        # 分配内存大小
 
 # 进入你的项目目录
 cd $SLURM_SUBMIT_DIR
@@ -14,7 +14,7 @@ cd $SLURM_SUBMIT_DIR
 # 激活anaconda环境
 conda init
 source /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh
-eval "$(/home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda shell.bash hook)"
+
 
 # 激活gpupytorch环境
 conda init
@@ -24,6 +24,6 @@ export MASTER_ADDR="localhost"
 export MASTER_PORT="29500"
 
 # 运行train1.py
-python trainwandb.py
+python train3.py
 
 

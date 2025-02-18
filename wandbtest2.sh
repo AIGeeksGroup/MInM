@@ -3,8 +3,8 @@
 #SBATCH --output=output_%j.log            # 输出日志文件，%j是作业ID
 #SBATCH --error=error_%j.log             # 错误日志文件，%j是作业ID
 #SBATCH --ntasks=1                       # 任务数
-#SBATCH --cpus-per-task=8                # 每个任务的CPU核心数
-#SBATCH --gres=gpu:2                     # 请求GPU（可以根据需求调整）
+#SBATCH --cpus-per-task=10                # 每个任务的CPU核心数
+#SBATCH --gres=gpu:1                  # 请求GPU（可以根据需求调整）
 #SBATCH --time=72:00:00                  # 设置作业的最大运行时间
 #SBATCH --mem=64G                        # 分配内存大小
 
@@ -24,6 +24,6 @@ export MASTER_ADDR="localhost"
 export MASTER_PORT="29500"
 
 # 运行train1.py
-python trainwandb2.py
+torchrun trainwandb6.py
 
 

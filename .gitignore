@@ -1,0 +1,7 @@
+.pth
+output_dir/
+output_dir2/
+output_dir3/
+output_dir4/
+val/
+wandb/

@@ -15,10 +15,11 @@ import os
 import time
 from collections import defaultdict, deque
 from pathlib import Path
-
+import datetime
 import torch
 import torch.distributed as dist
-from torch._six import inf
+import math
+inf = math.inf
 
 
 class SmoothedValue(object):
@@ -214,6 +215,9 @@ def save_on_master(*args, **kwargs):
 
 
 def init_distributed_mode(args):
+    if dist.is_initialized():
+        print("already initialized.")
+        return
     if args.dist_on_itp:
         args.rank = int(os.environ['OMPI_COMM_WORLD_RANK'])
         args.world_size = int(os.environ['OMPI_COMM_WORLD_SIZE'])
@@ -243,10 +247,21 @@ def init_distributed_mode(args):
     print('| distributed init (rank {}): {}, gpu {}'.format(
         args.rank, args.dist_url, args.gpu), flush=True)
     torch.distributed.init_process_group(backend=args.dist_backend, init_method=args.dist_url,
-                                         world_size=args.world_size, rank=args.rank)
+                                         world_size=args.world_size, rank=args.rank, timeout=datetime.timedelta(hours=2))
     torch.distributed.barrier()
     setup_for_distributed(args.rank == 0)
 
+def destroy_distributed_mode():
+    if dist.is_initialized():
+        dist.barrier()
+        dist.destroy_process_group()
+        print("Distributed process group destroyed.")
+
+def destroy_distributed_mode2():
+    if dist.is_initialized():
+        dist.barrier()
+        dist.destroy_process_group()
+        print("Distributed process group destroyed.")
 
 class NativeScalerWithGradNormCount:
     state_dict_key = "amp_scaler"
@@ -292,11 +307,16 @@ def get_grad_norm_(parameters, norm_type: float = 2.0) -> torch.Tensor:
     return total_norm
 
 
-def save_model(args, epoch, model, model_without_ddp, optimizer, loss_scaler):
+def save_model(args, epoch, model, model_without_ddp, optimizer, loss_scaler, name=None):
     output_dir = Path(args.output_dir)
-    epoch_name = str(epoch)
+    if name is None:
+        epoch_name = str(epoch)
+        checkpoint_name = 'heckpoint-%s.pth' % epoch_name
+    else:
+        checkpoint_name = name
+    checkpoint_paths = [output_dir / checkpoint_name]
+
     if loss_scaler is not None:
-        checkpoint_paths = [output_dir / ('checkpoint-%s.pth' % epoch_name)]
         for checkpoint_path in checkpoint_paths:
             to_save = {
                 'model': model_without_ddp.state_dict(),

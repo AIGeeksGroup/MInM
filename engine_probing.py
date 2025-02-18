@@ -38,7 +38,7 @@ from engine_finetune import train_one_epoch, evaluate
 
 def get_args_parser():
     parser = argparse.ArgumentParser('MAE linear probing for image classification', add_help=False)
-    parser.add_argument('--batch_size', default=256, type=int,
+    parser.add_argument('--batch_size', default=128, type=int,
                         help='Batch size per GPU (effective batch size is batch_size * accum_iter * # gpus')
     parser.add_argument('--epochs', default=90, type=int)
     parser.add_argument('--accum_iter', default=1, type=int,
@@ -97,7 +97,7 @@ def get_args_parser():
     parser.set_defaults(pin_mem=True)
 
     # distributed training parameters
-    parser.add_argument('--world_size', default=1, type=int,
+    parser.add_argument('--world_size', default=2, type=int,
                         help='number of distributed processes')
     parser.add_argument('--local_rank', default=-1, type=int)
     parser.add_argument('--dist_on_itp', action='store_true')
@@ -106,12 +106,12 @@ def get_args_parser():
 
     return parser
 
-def linear_probing(model_path):
+def linear_probing(model_path,args1):
 
     args2 = get_args_parser()
     args2 = args2.parse_args()
-    misc.init_distributed_mode(args2)
-    args2.distributed = False
+    args2.distributed = False 
+
 
     print('job dir: {}'.format(os.path.dirname(os.path.realpath(__file__))))
     print("{}".format(args2).replace(', ', ',\n'))
@@ -141,7 +141,7 @@ def linear_probing(model_path):
     print(dataset_train)
     print(dataset_val)
 
-    if True:  # args.distributed:
+    if args2.distributed == True:  # args.distributed:
         num_tasks = misc.get_world_size()
         global_rank = misc.get_rank()
         sampler_train = torch.utils.data.DistributedSampler(
@@ -160,6 +160,7 @@ def linear_probing(model_path):
     else:
         sampler_train = torch.utils.data.RandomSampler(dataset_train)
         sampler_val = torch.utils.data.SequentialSampler(dataset_val)
+        global_rank = misc.get_rank()
 
     if global_rank == 0 and args2.log_dir is not None and not args2.eval:
         os.makedirs(args2.log_dir, exist_ok=True)
@@ -242,8 +243,8 @@ def linear_probing(model_path):
     print("accumulate grad iterations: %d" % args2.accum_iter)
     print("effective batch size: %d" % eff_batch_size)
 
-    if args2.distributed:
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args2.gpu])
+    if args2.distributed == True:
+        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args2.gpu],  find_unused_parameters=True)
         model_without_ddp = model.module
 
     optimizer = LARS(model_without_ddp.head.parameters(), lr=args2.lr, weight_decay=args2.weight_decay)

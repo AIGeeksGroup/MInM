@@ -43,7 +43,7 @@ wandb.login(key="9c1af0a383f6b1138e4ab20f65a4d6e4f194ffad")
 
 def get_args_parser():
     parser = argparse.ArgumentParser('MAE pre-training', add_help=False)
-    parser.add_argument('--batch_size', default=512, type=int,
+    parser.add_argument('--batch_size', default=128, type=int,
                         help='Batch size per GPU (effective batch size is batch_size * accum_iter * # gpus')
     parser.add_argument('--epochs', default=400, type=int)
     parser.add_argument('--accum_iter', default=1, type=int,
@@ -75,9 +75,9 @@ def get_args_parser():
     # Dataset parameters
     parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette', type=str,
                         help='dataset path')
-    parser.add_argument('--output_dir', default='output_dir',
+    parser.add_argument('--output_dir', default='output_dir3',
                         help='path where to save, empty for no saving')
-    parser.add_argument('--log_dir', default='output_dir',
+    parser.add_argument('--log_dir', default='output_dir3',
                         help='path where to tensorboard log')
     parser.add_argument('--device', default='cuda',
                         help='device to use for training / testing')
@@ -94,7 +94,7 @@ def get_args_parser():
     parser.set_defaults(pin_mem=True)
 
     # distributed training parameters
-    parser.add_argument('--world_size', default=2, type=int,
+    parser.add_argument('--world_size', default=4, type=int,
                         help='number of distributed processes')
     parser.add_argument('--local_rank', default=-1, type=int)
     parser.add_argument('--dist_on_itp', action='store_true')
@@ -110,11 +110,12 @@ def main(args):
             project="MInM",
             entity="visual-intelligence-laboratory",  
             config=vars(args),
-            name="MAE_imagenette_bs1024_epoch400_withevaluate"
+            name="MAE_imagenette_bs512_epoch400_withevaluate"
         )
-
+    args2=args
     misc.init_distributed_mode(args)
-
+    misc.destroy_distributed_mode()
+    misc.init_distributed_mode(args)
     print('job dir: {}'.format(os.path.dirname(os.path.realpath(__file__))))
     print("{}".format(args).replace(', ', ',\n'))
 
@@ -218,11 +219,13 @@ def main(args):
                             loss_scaler=loss_scaler, epoch=epoch, name="temporary.pth"
                         )
             if misc.is_main_process():
-                
-                current_accuracy = linear_probing("./output_dir/temporary.pth")
+                misc.destroy_distributed_mode()
+                print(f"args1.gpu: {args.gpu}") 
+                current_accuracy = linear_probing("./output_dir3/temporary.pth", args)
                 print(f"Current best accuracy after linear probing: {current_accuracy:.2f}%")
                 wandb.log({'best_accuracy': current_accuracy})
-
+                misc.destroy_distributed_mode2()
+                misc.init_distributed_mode(args2)
                 
                 if current_accuracy > best_accuracy:
                     best_accuracy = current_accuracy  

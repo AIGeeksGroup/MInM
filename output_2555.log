@@ -1,0 +1,430 @@
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/condabin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda-env
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/activate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/deactivate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.csh
+no change     /home/ytia0661@acfr.usyd.edu.au/.bashrc
+No action taken.
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/condabin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda-env
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/activate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/deactivate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.csh
+no change     /home/ytia0661@acfr.usyd.edu.au/.bashrc
+No action taken.
+| distributed init (rank 0): env://, gpu 0
+[21:05:29.112157] job dir: /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae
+[21:05:29.113035] Namespace(batch_size=256,
+epochs=600,
+accum_iter=1,
+model='mae_vit_large_patch16',
+input_size=224,
+mask_ratio=0.75,
+norm_pix_loss=False,
+weight_decay=0.05,
+lr=None,
+blr=0.001,
+min_lr=0.0,
+warmup_epochs=40,
+data_path='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette',
+output_dir='output_dir3',
+log_dir='output_dir3',
+device='cuda',
+seed=0,
+resume='',
+start_epoch=0,
+num_workers=10,
+pin_mem=True,
+world_size=1,
+local_rank=-1,
+dist_on_itp=False,
+dist_url='env://',
+rank=0,
+gpu=0,
+distributed=True,
+dist_backend='nccl')
+[21:05:30.315537] Dataset ImageFolder
+    Number of datapoints: 9469
+    Root location: /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/train
+    StandardTransform
+Transform: Compose(
+               RandomResizedCrop(size=(224, 224), scale=(0.2, 1.0), ratio=(0.75, 1.3333), interpolation=bicubic, antialias=True)
+               RandomHorizontalFlip(p=0.5)
+               ToTensor()
+               Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+           )
+[21:05:30.316876] Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x7fd11c3aa120>
+[21:05:34.011797] Model = MaskedAutoencoderViT(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 1024, kernel_size=(16, 16), stride=(16, 16))
+  )
+  (blocks): ModuleList(
+    (0-23): 24 x Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+  (decoder_embed): Linear(in_features=1024, out_features=512, bias=True)
+  (decoder_blocks): ModuleList(
+    (0-7): 8 x Block(
+      (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=512, out_features=1536, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=512, out_features=512, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (decoder_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+  (decoder_pred): Linear(in_features=512, out_features=768, bias=True)
+)
+[21:05:34.012174] base lr: 1.00e-03
+[21:05:34.012285] actual lr: 1.00e-03
+[21:05:34.012388] accumulate grad iterations: 1
+[21:05:34.012496] effective batch size: 256
+[21:05:34.419532] AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0.0
+
+Parameter Group 1
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0.05
+)
+[21:05:34.428285] Start training for 600 epochs
+[21:05:34.434365] log_dir: output_dir3
+[21:05:58.804308] Epoch: [0]  [ 0/36]  eta: 0:14:36  lr: 0.000000  loss: 2.2447 (2.2447)  time: 24.3372  data: 10.9998  max mem: 31746
+[21:06:03.944700] Epoch: [0]  [20/36]  eta: 0:00:22  lr: 0.000014  loss: 1.9088 (1.9843)  time: 0.2569  data: 0.0002  max mem: 34283
+[21:06:17.014025] Epoch: [0]  [35/36]  eta: 0:00:01  lr: 0.000024  loss: 1.6160 (1.8256)  time: 0.7174  data: 0.4639  max mem: 34283
+[21:06:17.063321] Epoch: [0] Total time: 0:00:42 (1.1841 s / it)
+[21:06:17.064255] Averaged stats: lr: 0.000024  loss: 1.6160 (1.8256)
+[21:06:17.106768] log_dir: output_dir3
+[21:06:20.067969] Epoch: [1]  [ 0/36]  eta: 0:01:46  lr: 0.000025  loss: 1.4530 (1.4530)  time: 2.9603  data: 2.7041  max mem: 34283
+[21:06:25.869325] Epoch: [1]  [20/36]  eta: 0:00:06  lr: 0.000039  loss: 1.4063 (1.4172)  time: 0.2900  data: 0.0327  max mem: 34283
+[21:06:29.947057] Epoch: [1]  [35/36]  eta: 0:00:00  lr: 0.000049  loss: 1.3107 (1.3641)  time: 0.2687  data: 0.0122  max mem: 34283
+[21:06:30.011100] Epoch: [1] Total time: 0:00:12 (0.3584 s / it)
+[21:06:30.012084] Averaged stats: lr: 0.000049  loss: 1.3107 (1.3641)
+[21:06:30.020287] log_dir: output_dir3
+[21:06:32.912325] Epoch: [2]  [ 0/36]  eta: 0:01:44  lr: 0.000050  loss: 1.2448 (1.2448)  time: 2.8912  data: 2.6341  max mem: 34283
+[21:06:38.895344] Epoch: [2]  [20/36]  eta: 0:00:06  lr: 0.000064  loss: 1.2217 (1.2275)  time: 0.2991  data: 0.0405  max mem: 34283
+[21:06:42.755535] Epoch: [2]  [35/36]  eta: 0:00:00  lr: 0.000074  loss: 1.2141 (1.2193)  time: 0.2829  data: 0.0254  max mem: 34283
+[21:06:42.821290] Epoch: [2] Total time: 0:00:12 (0.3556 s / it)
+[21:06:42.822221] Averaged stats: lr: 0.000074  loss: 1.2141 (1.2193)
+[21:07:02.049641] job dir: /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae
+[21:07:02.050364] Namespace(batch_size=128,
+epochs=10,
+accum_iter=1,
+model='vit_large_patch16',
+weight_decay=0,
+lr=None,
+blr=0.1,
+min_lr=0.0,
+warmup_epochs=10,
+finetune=None,
+global_pool=False,
+data_path='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/val',
+nb_classes=10,
+output_dir='./output_dir2',
+log_dir='./output_dir2',
+device='cuda',
+seed=0,
+resume='',
+start_epoch=0,
+eval=False,
+dist_eval=False,
+num_workers=10,
+pin_mem=True,
+world_size=2,
+local_rank=-1,
+dist_on_itp=False,
+dist_url='env://',
+distributed=False)
+[21:07:02.326200] Dataset ImageFolder
+    Number of datapoints: 1590
+    Root location: /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/val/train
+    StandardTransform
+Transform: Compose(
+               RandomResizedCrop(size=(224, 224), scale=(0.08, 1.0), ratio=(0.75, 1.3333), interpolation=bicubic, antialias=True)
+               RandomHorizontalFlip(p=0.5)
+               ToTensor()
+               Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+           )
+[21:07:02.327382] Dataset ImageFolder
+    Number of datapoints: 400
+    Root location: /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/val/val
+    StandardTransform
+Transform: Compose(
+               Resize(size=256, interpolation=bicubic, max_size=None, antialias=True)
+               CenterCrop(size=(224, 224))
+               ToTensor()
+               Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+           )
+[21:07:07.749631] Load pre-trained checkpoint from: ./output_dir3/temporary.pth
+[21:07:07.821807] _IncompatibleKeys(missing_keys=['head.weight', 'head.bias'], unexpected_keys=['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_blocks.1.norm1.weight', 'decoder_blocks.1.norm1.bias', 'decoder_blocks.1.attn.qkv.weight', 'decoder_blocks.1.attn.qkv.bias', 'decoder_blocks.1.attn.proj.weight', 'decoder_blocks.1.attn.proj.bias', 'decoder_blocks.1.norm2.weight', 'decoder_blocks.1.norm2.bias', 'decoder_blocks.1.mlp.fc1.weight', 'decoder_blocks.1.mlp.fc1.bias', 'decoder_blocks.1.mlp.fc2.weight', 'decoder_blocks.1.mlp.fc2.bias', 'decoder_blocks.2.norm1.weight', 'decoder_blocks.2.norm1.bias', 'decoder_blocks.2.attn.qkv.weight', 'decoder_blocks.2.attn.qkv.bias', 'decoder_blocks.2.attn.proj.weight', 'decoder_blocks.2.attn.proj.bias', 'decoder_blocks.2.norm2.weight', 'decoder_blocks.2.norm2.bias', 'decoder_blocks.2.mlp.fc1.weight', 'decoder_blocks.2.mlp.fc1.bias', 'decoder_blocks.2.mlp.fc2.weight', 'decoder_blocks.2.mlp.fc2.bias', 'decoder_blocks.3.norm1.weight', 'decoder_blocks.3.norm1.bias', 'decoder_blocks.3.attn.qkv.weight', 'decoder_blocks.3.attn.qkv.bias', 'decoder_blocks.3.attn.proj.weight', 'decoder_blocks.3.attn.proj.bias', 'decoder_blocks.3.norm2.weight', 'decoder_blocks.3.norm2.bias', 'decoder_blocks.3.mlp.fc1.weight', 'decoder_blocks.3.mlp.fc1.bias', 'decoder_blocks.3.mlp.fc2.weight', 'decoder_blocks.3.mlp.fc2.bias', 'decoder_blocks.4.norm1.weight', 'decoder_blocks.4.norm1.bias', 'decoder_blocks.4.attn.qkv.weight', 'decoder_blocks.4.attn.qkv.bias', 'decoder_blocks.4.attn.proj.weight', 'decoder_blocks.4.attn.proj.bias', 'decoder_blocks.4.norm2.weight', 'decoder_blocks.4.norm2.bias', 'decoder_blocks.4.mlp.fc1.weight', 'decoder_blocks.4.mlp.fc1.bias', 'decoder_blocks.4.mlp.fc2.weight', 'decoder_blocks.4.mlp.fc2.bias', 'decoder_blocks.5.norm1.weight', 'decoder_blocks.5.norm1.bias', 'decoder_blocks.5.attn.qkv.weight', 'decoder_blocks.5.attn.qkv.bias', 'decoder_blocks.5.attn.proj.weight', 'decoder_blocks.5.attn.proj.bias', 'decoder_blocks.5.norm2.weight', 'decoder_blocks.5.norm2.bias', 'decoder_blocks.5.mlp.fc1.weight', 'decoder_blocks.5.mlp.fc1.bias', 'decoder_blocks.5.mlp.fc2.weight', 'decoder_blocks.5.mlp.fc2.bias', 'decoder_blocks.6.norm1.weight', 'decoder_blocks.6.norm1.bias', 'decoder_blocks.6.attn.qkv.weight', 'decoder_blocks.6.attn.qkv.bias', 'decoder_blocks.6.attn.proj.weight', 'decoder_blocks.6.attn.proj.bias', 'decoder_blocks.6.norm2.weight', 'decoder_blocks.6.norm2.bias', 'decoder_blocks.6.mlp.fc1.weight', 'decoder_blocks.6.mlp.fc1.bias', 'decoder_blocks.6.mlp.fc2.weight', 'decoder_blocks.6.mlp.fc2.bias', 'decoder_blocks.7.norm1.weight', 'decoder_blocks.7.norm1.bias', 'decoder_blocks.7.attn.qkv.weight', 'decoder_blocks.7.attn.qkv.bias', 'decoder_blocks.7.attn.proj.weight', 'decoder_blocks.7.attn.proj.bias', 'decoder_blocks.7.norm2.weight', 'decoder_blocks.7.norm2.bias', 'decoder_blocks.7.mlp.fc1.weight', 'decoder_blocks.7.mlp.fc1.bias', 'decoder_blocks.7.mlp.fc2.weight', 'decoder_blocks.7.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias'])
+[21:07:07.960334] Model = VisionTransformer(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 1024, kernel_size=(16, 16), stride=(16, 16))
+  )
+  (pos_drop): Dropout(p=0.0, inplace=False)
+  (blocks): ModuleList(
+    (0-23): 24 x Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+  (head): Sequential(
+    (0): BatchNorm1d(1024, eps=1e-06, momentum=0.1, affine=False, track_running_stats=True)
+    (1): Linear(in_features=1024, out_features=10, bias=True)
+  )
+)
+[21:07:07.960640] number of params (M): 0.01
+[21:07:07.960782] base lr: 1.00e-01
+[21:07:07.960904] actual lr: 5.00e-02
+[21:07:07.961007] accumulate grad iterations: 1
+[21:07:07.961115] effective batch size: 128
+[21:07:07.961372] LARS (
+Parameter Group 0
+    lr: 0.05
+    momentum: 0.9
+    trust_coefficient: 0.001
+    weight_decay: 0
+)
+[21:07:07.961673] criterion = CrossEntropyLoss()
+[21:07:07.961794] Start training for 10 epochs
+[21:07:07.963258] log_dir: ./output_dir2
+[21:07:14.580664] Epoch: [0]  [ 0/12]  eta: 0:01:19  lr: 0.000000  loss: 2.3361 (2.3361)  time: 6.6157  data: 5.3884  max mem: 34283
+[21:07:17.093684] Epoch: [0]  [11/12]  eta: 0:00:00  lr: 0.004583  loss: 2.3350 (2.3276)  time: 0.7606  data: 0.5630  max mem: 34283
+[21:07:17.180491] Epoch: [0] Total time: 0:00:09 (0.7681 s / it)
+[21:07:17.181428] Averaged stats: lr: 0.004583  loss: 2.3350 (2.3276)
+[21:07:21.479770] Updating MetricLogger with acc1: 13.28125
+[21:07:21.480988] Test:  [0/4]  eta: 0:00:17  loss: 2.2448 (2.2448)  acc1: 13.2812 (13.2812)  acc5: 73.4375 (73.4375)  time: 4.2976  data: 3.8950  max mem: 34283
+[21:07:21.579716] Updating MetricLogger with acc1: 5.46875
+[21:07:21.683757] Updating MetricLogger with acc1: 11.71875
+[21:07:21.714880] Updating MetricLogger with acc1: 50.0
+[21:07:21.715444] Test:  [3/4]  eta: 0:00:01  loss: 2.2448 (2.2496)  acc1: 11.7188 (11.7500)  acc5: 50.0000 (59.0000)  time: 1.1329  data: 0.9738  max mem: 34283
+[21:07:21.785797] Test: Total time: 0:00:04 (1.1508 s / it)
+[21:07:21.786783] * Acc@1 11.750 Acc@5 59.000 loss 2.250
+[21:07:21.787037] Accuracy of the network on the 400 test images: 11.8%
+[21:07:21.787145] Max accuracy: 11.75%
+[21:07:21.849720] log_dir: ./output_dir2
+[21:07:23.741095] Epoch: [1]  [ 0/12]  eta: 0:00:22  lr: 0.005000  loss: 2.3554 (2.3554)  time: 1.8907  data: 1.7892  max mem: 34283
+[21:07:24.897287] Epoch: [1]  [11/12]  eta: 0:00:00  lr: 0.009583  loss: 2.3242 (2.3190)  time: 0.2538  data: 0.1491  max mem: 34283
+[21:07:24.981693] Epoch: [1] Total time: 0:00:03 (0.2610 s / it)
+[21:07:24.982992] Averaged stats: lr: 0.009583  loss: 2.3242 (2.3190)
+[21:07:26.602624] Updating MetricLogger with acc1: 9.375
+[21:07:26.603533] Test:  [0/4]  eta: 0:00:06  loss: 2.3079 (2.3079)  acc1: 9.3750 (9.3750)  acc5: 66.4062 (66.4062)  time: 1.6182  data: 1.5185  max mem: 34283
+[21:07:26.707007] Updating MetricLogger with acc1: 8.59375
+[21:07:26.811091] Updating MetricLogger with acc1: 10.15625
+[21:07:26.828723] Updating MetricLogger with acc1: 18.75
+[21:07:26.829247] Test:  [3/4]  eta: 0:00:00  loss: 2.2869 (2.2585)  acc1: 9.3750 (9.7500)  acc5: 56.2500 (58.7500)  time: 0.4609  data: 0.3797  max mem: 34283
+[21:07:26.895361] Test: Total time: 0:00:01 (0.4776 s / it)
+[21:07:26.896368] * Acc@1 9.750 Acc@5 58.750 loss 2.259
+[21:07:26.896584] Accuracy of the network on the 400 test images: 9.8%
+[21:07:26.896689] Max accuracy: 11.75%
+[21:07:26.913578] log_dir: ./output_dir2
+[21:07:28.633589] Epoch: [2]  [ 0/12]  eta: 0:00:20  lr: 0.010000  loss: 2.3348 (2.3348)  time: 1.7191  data: 1.6160  max mem: 34283
+[21:07:29.790548] Epoch: [2]  [11/12]  eta: 0:00:00  lr: 0.014583  loss: 2.3216 (2.3208)  time: 0.2396  data: 0.1347  max mem: 34283
+[21:07:29.871732] Epoch: [2] Total time: 0:00:02 (0.2465 s / it)
+[21:07:29.872660] Averaged stats: lr: 0.014583  loss: 2.3216 (2.3208)
+[21:07:31.563816] Updating MetricLogger with acc1: 10.9375
+[21:07:31.564768] Test:  [0/4]  eta: 0:00:06  loss: 2.3398 (2.3398)  acc1: 10.9375 (10.9375)  acc5: 61.7188 (61.7188)  time: 1.6905  data: 1.5914  max mem: 34283
+[21:07:31.668361] Updating MetricLogger with acc1: 10.9375
+[21:07:31.771951] Updating MetricLogger with acc1: 9.375
+[21:07:31.789566] Updating MetricLogger with acc1: 18.75
+[21:07:31.790099] Test:  [3/4]  eta: 0:00:00  loss: 2.2677 (2.2632)  acc1: 10.9375 (10.7500)  acc5: 61.7188 (60.5000)  time: 0.4788  data: 0.3979  max mem: 34283
+[21:07:31.858099] Test: Total time: 0:00:01 (0.4960 s / it)
+[21:07:31.859131] * Acc@1 10.750 Acc@5 60.500 loss 2.263
+[21:07:31.859377] Accuracy of the network on the 400 test images: 10.8%
+[21:07:31.859482] Max accuracy: 11.75%
+[21:07:31.874559] log_dir: ./output_dir2
+[21:07:33.483149] Epoch: [3]  [ 0/12]  eta: 0:00:19  lr: 0.015000  loss: 2.3297 (2.3297)  time: 1.6075  data: 1.5040  max mem: 34283
+[21:07:34.668724] Epoch: [3]  [11/12]  eta: 0:00:00  lr: 0.019583  loss: 2.3161 (2.3200)  time: 0.2327  data: 0.1279  max mem: 34283
+[21:07:34.751757] Epoch: [3] Total time: 0:00:02 (0.2397 s / it)
+[21:07:34.752665] Averaged stats: lr: 0.019583  loss: 2.3161 (2.3200)
+[21:07:36.330403] Updating MetricLogger with acc1: 10.15625
+[21:07:36.331458] Test:  [0/4]  eta: 0:00:06  loss: 2.3496 (2.3496)  acc1: 10.1562 (10.1562)  acc5: 60.1562 (60.1562)  time: 1.5771  data: 1.4778  max mem: 34283
+[21:07:36.434808] Updating MetricLogger with acc1: 10.9375
+[21:07:36.539392] Updating MetricLogger with acc1: 11.71875
+[21:07:36.557078] Updating MetricLogger with acc1: 25.0
+[21:07:36.557590] Test:  [3/4]  eta: 0:00:00  loss: 2.2520 (2.2579)  acc1: 10.9375 (11.5000)  acc5: 60.1562 (60.0000)  time: 0.4507  data: 0.3695  max mem: 34283
+[21:07:36.620697] Test: Total time: 0:00:01 (0.4667 s / it)
+[21:07:36.621734] * Acc@1 11.500 Acc@5 60.000 loss 2.258
+[21:07:36.622010] Accuracy of the network on the 400 test images: 11.5%
+[21:07:36.622143] Max accuracy: 11.75%
+[21:07:36.638696] log_dir: ./output_dir2
+[21:07:38.383976] Epoch: [4]  [ 0/12]  eta: 0:00:20  lr: 0.020000  loss: 2.3508 (2.3508)  time: 1.7447  data: 1.6434  max mem: 34283
+[21:07:39.541716] Epoch: [4]  [11/12]  eta: 0:00:00  lr: 0.024583  loss: 2.3069 (2.3098)  time: 0.2418  data: 0.1370  max mem: 34283
+[21:07:39.617817] Epoch: [4] Total time: 0:00:02 (0.2482 s / it)
+[21:07:39.618864] Averaged stats: lr: 0.024583  loss: 2.3069 (2.3098)
+[21:07:41.270448] Updating MetricLogger with acc1: 10.9375
+[21:07:41.271349] Test:  [0/4]  eta: 0:00:06  loss: 2.3613 (2.3613)  acc1: 10.9375 (10.9375)  acc5: 53.9062 (53.9062)  time: 1.6508  data: 1.5520  max mem: 34283
+[21:07:41.374812] Updating MetricLogger with acc1: 10.9375
+[21:07:41.479416] Updating MetricLogger with acc1: 12.5
+[21:07:41.497072] Updating MetricLogger with acc1: 31.25
+[21:07:41.497581] Test:  [3/4]  eta: 0:00:00  loss: 2.2399 (2.2481)  acc1: 10.9375 (12.2500)  acc5: 56.2500 (58.5000)  time: 0.4691  data: 0.3881  max mem: 34283
+[21:07:41.561154] Test: Total time: 0:00:01 (0.4852 s / it)
+[21:07:41.562183] * Acc@1 12.250 Acc@5 58.500 loss 2.248
+[21:07:41.562397] Accuracy of the network on the 400 test images: 12.2%
+[21:07:41.562497] Max accuracy: 12.25%
+[21:07:41.582208] log_dir: ./output_dir2
+[21:07:43.323083] Epoch: [5]  [ 0/12]  eta: 0:00:20  lr: 0.025000  loss: 2.3229 (2.3229)  time: 1.7402  data: 1.6380  max mem: 34283
+[21:07:44.477393] Epoch: [5]  [11/12]  eta: 0:00:00  lr: 0.029583  loss: 2.3108 (2.3048)  time: 0.2411  data: 0.1365  max mem: 34283
+[21:07:44.570871] Epoch: [5] Total time: 0:00:02 (0.2490 s / it)
+[21:07:44.572239] Averaged stats: lr: 0.029583  loss: 2.3108 (2.3048)
+[21:07:46.221987] Updating MetricLogger with acc1: 10.9375
+[21:07:46.222965] Test:  [0/4]  eta: 0:00:06  loss: 2.3661 (2.3661)  acc1: 10.9375 (10.9375)  acc5: 53.9062 (53.9062)  time: 1.6479  data: 1.5487  max mem: 34283
+[21:07:46.326407] Updating MetricLogger with acc1: 12.5
+[21:07:46.429783] Updating MetricLogger with acc1: 15.625
+[21:07:46.447167] Updating MetricLogger with acc1: 37.5
+[21:07:46.447669] Test:  [3/4]  eta: 0:00:00  loss: 2.2229 (2.2406)  acc1: 12.5000 (14.0000)  acc5: 57.8125 (60.2500)  time: 0.4681  data: 0.3872  max mem: 34283
+[21:07:46.510267] Test: Total time: 0:00:01 (0.4839 s / it)
+[21:07:46.511313] * Acc@1 14.000 Acc@5 60.250 loss 2.241
+[21:07:46.511584] Accuracy of the network on the 400 test images: 14.0%
+[21:07:46.511700] Max accuracy: 14.00%
+[21:07:46.534089] log_dir: ./output_dir2
+[21:07:48.274921] Epoch: [6]  [ 0/12]  eta: 0:00:20  lr: 0.030000  loss: 2.3054 (2.3054)  time: 1.7401  data: 1.6395  max mem: 34283
+[21:07:49.431326] Epoch: [6]  [11/12]  eta: 0:00:00  lr: 0.034583  loss: 2.2824 (2.2866)  time: 0.2413  data: 0.1367  max mem: 34283
+[21:07:49.515310] Epoch: [6] Total time: 0:00:02 (0.2484 s / it)
+[21:07:49.516329] Averaged stats: lr: 0.034583  loss: 2.2824 (2.2866)
+[21:07:51.103894] Updating MetricLogger with acc1: 10.9375
+[21:07:51.104794] Test:  [0/4]  eta: 0:00:06  loss: 2.3682 (2.3682)  acc1: 10.9375 (10.9375)  acc5: 52.3438 (52.3438)  time: 1.5866  data: 1.4875  max mem: 34283
+[21:07:51.208108] Updating MetricLogger with acc1: 12.5
+[21:07:51.311524] Updating MetricLogger with acc1: 15.625
+[21:07:51.328999] Updating MetricLogger with acc1: 43.75
+[21:07:51.329562] Test:  [3/4]  eta: 0:00:00  loss: 2.2039 (2.2275)  acc1: 12.5000 (14.2500)  acc5: 60.1562 (60.2500)  time: 0.4527  data: 0.3720  max mem: 34283
+[21:07:51.392976] Test: Total time: 0:00:01 (0.4688 s / it)
+[21:07:51.393946] * Acc@1 14.250 Acc@5 60.250 loss 2.227
+[21:07:51.394159] Accuracy of the network on the 400 test images: 14.2%
+[21:07:51.394250] Max accuracy: 14.25%
+[21:07:51.412137] log_dir: ./output_dir2
+[21:07:53.229109] Epoch: [7]  [ 0/12]  eta: 0:00:21  lr: 0.035000  loss: 2.2873 (2.2873)  time: 1.8163  data: 1.7144  max mem: 34283
+[21:07:54.386712] Epoch: [7]  [11/12]  eta: 0:00:00  lr: 0.039583  loss: 2.2873 (2.2794)  time: 0.2478  data: 0.1429  max mem: 34283
+[21:07:54.467846] Epoch: [7] Total time: 0:00:03 (0.2546 s / it)
+[21:07:54.468760] Averaged stats: lr: 0.039583  loss: 2.2873 (2.2794)
+[21:07:56.085991] Updating MetricLogger with acc1: 10.15625
+[21:07:56.086973] Test:  [0/4]  eta: 0:00:06  loss: 2.3620 (2.3620)  acc1: 10.1562 (10.1562)  acc5: 53.1250 (53.1250)  time: 1.6165  data: 1.5174  max mem: 34283
+[21:07:56.189289] Updating MetricLogger with acc1: 11.71875
+[21:07:56.292518] Updating MetricLogger with acc1: 17.1875
+[21:07:56.310122] Updating MetricLogger with acc1: 43.75
+[21:07:56.310665] Test:  [3/4]  eta: 0:00:00  loss: 2.1839 (2.2146)  acc1: 11.7188 (14.2500)  acc5: 59.3750 (61.2500)  time: 0.4599  data: 0.3794  max mem: 34283
+[21:07:56.373541] Test: Total time: 0:00:01 (0.4759 s / it)
+[21:07:56.374572] * Acc@1 14.250 Acc@5 61.250 loss 2.215
+[21:07:56.374869] Accuracy of the network on the 400 test images: 14.2%
+[21:07:56.375010] Max accuracy: 14.25%
+[21:07:56.395463] log_dir: ./output_dir2
+[21:07:58.112198] Epoch: [8]  [ 0/12]  eta: 0:00:20  lr: 0.040000  loss: 2.3158 (2.3158)  time: 1.7159  data: 1.6133  max mem: 34283
+[21:07:59.449936] Epoch: [8]  [11/12]  eta: 0:00:00  lr: 0.044583  loss: 2.2627 (2.2669)  time: 0.2544  data: 0.1506  max mem: 34283
+[21:07:59.533818] Epoch: [8] Total time: 0:00:03 (0.2615 s / it)
+[21:07:59.534752] Averaged stats: lr: 0.044583  loss: 2.2627 (2.2669)
+[21:08:01.090498] Updating MetricLogger with acc1: 10.9375
+[21:08:01.091424] Test:  [0/4]  eta: 0:00:06  loss: 2.3605 (2.3605)  acc1: 10.9375 (10.9375)  acc5: 53.1250 (53.1250)  time: 1.5550  data: 1.4558  max mem: 34283
+[21:08:01.194605] Updating MetricLogger with acc1: 12.5
+[21:08:01.298365] Updating MetricLogger with acc1: 18.75
+[21:08:01.315988] Updating MetricLogger with acc1: 43.75
+[21:08:01.316486] Test:  [3/4]  eta: 0:00:00  loss: 2.1623 (2.2013)  acc1: 12.5000 (15.2500)  acc5: 61.7188 (62.7500)  time: 0.4449  data: 0.3640  max mem: 34283
+[21:08:01.377621] Test: Total time: 0:00:01 (0.4604 s / it)
+[21:08:01.378595] * Acc@1 15.250 Acc@5 62.750 loss 2.201
+[21:08:01.378810] Accuracy of the network on the 400 test images: 15.2%
+[21:08:01.378922] Max accuracy: 15.25%
+[21:08:01.395893] log_dir: ./output_dir2
+[21:08:03.065666] Epoch: [9]  [ 0/12]  eta: 0:00:20  lr: 0.045000  loss: 2.2004 (2.2004)  time: 1.6691  data: 1.5674  max mem: 34283
+[21:08:04.269764] Epoch: [9]  [11/12]  eta: 0:00:00  lr: 0.049583  loss: 2.2532 (2.2517)  time: 0.2394  data: 0.1347  max mem: 34283
+[21:08:04.353392] Epoch: [9] Total time: 0:00:02 (0.2464 s / it)
+[21:08:04.354323] Averaged stats: lr: 0.049583  loss: 2.2532 (2.2517)
+[21:08:05.950030] Updating MetricLogger with acc1: 13.28125
+[21:08:05.950948] Test:  [0/4]  eta: 0:00:06  loss: 2.3537 (2.3537)  acc1: 13.2812 (13.2812)  acc5: 53.1250 (53.1250)  time: 1.5950  data: 1.4958  max mem: 34283
+[21:08:06.054575] Updating MetricLogger with acc1: 14.0625
+[21:08:06.158542] Updating MetricLogger with acc1: 20.3125
+[21:08:06.176171] Updating MetricLogger with acc1: 50.0
+[21:08:06.176679] Test:  [3/4]  eta: 0:00:00  loss: 2.1471 (2.1803)  acc1: 14.0625 (17.2500)  acc5: 63.2812 (63.5000)  time: 0.4551  data: 0.3740  max mem: 34283
+[21:08:06.245062] Test: Total time: 0:00:01 (0.4724 s / it)
+[21:08:06.246071] * Acc@1 17.250 Acc@5 63.500 loss 2.180
+[21:08:06.246302] Accuracy of the network on the 400 test images: 17.2%
+[21:08:06.246403] Max accuracy: 17.25%
+[21:08:06.271689] Training time 0:00:58
+[21:08:06.279415] Current best accuracy after linear probing: 17.25%
+[21:08:29.800299] log_dir: output_dir3
+[21:08:33.360011] Epoch: [3]  [ 0/36]  eta: 0:02:08  lr: 0.000075  loss: 1.1502 (1.1502)  time: 3.5584  data: 3.3034  max mem: 34295
+[21:08:39.354150] Epoch: [3]  [20/36]  eta: 0:00:07  lr: 0.000089  loss: 1.1623 (1.1660)  time: 0.2996  data: 0.0415  max mem: 34295
+[21:08:43.211151] Epoch: [3]  [35/36]  eta: 0:00:00  lr: 0.000099  loss: 1.1162 (1.1415)  time: 0.2573  data: 0.0001  max mem: 34295
+[21:08:43.315160] Epoch: [3] Total time: 0:00:13 (0.3754 s / it)
+[21:08:43.316125] Averaged stats: lr: 0.000099  loss: 1.1162 (1.1415)
+[21:08:43.322412] log_dir: output_dir3
+[21:08:47.258151] Epoch: [4]  [ 0/36]  eta: 0:02:21  lr: 0.000100  loss: 1.0873 (1.0873)  time: 3.9349  data: 3.6792  max mem: 34295
+[21:08:52.978534] Epoch: [4]  [20/36]  eta: 0:00:07  lr: 0.000114  loss: 1.0653 (1.0664)  time: 0.2860  data: 0.0274  max mem: 34295
+[21:08:56.848282] Epoch: [4]  [35/36]  eta: 0:00:00  lr: 0.000124  loss: 1.0144 (1.0443)  time: 0.2733  data: 0.0155  max mem: 34295
+[21:08:56.961764] Epoch: [4] Total time: 0:00:13 (0.3789 s / it)
+[21:08:56.963541] Averaged stats: lr: 0.000124  loss: 1.0144 (1.0443)
+[21:08:56.974392] log_dir: output_dir3
+[21:09:00.367450] Epoch: [5]  [ 0/36]  eta: 0:02:02  lr: 0.000125  loss: 0.9581 (0.9581)  time: 3.3920  data: 3.1308  max mem: 34295
+[21:09:05.979486] Epoch: [5]  [20/36]  eta: 0:00:06  lr: 0.000139  loss: 0.8929 (0.9007)  time: 0.2805  data: 0.0216  max mem: 34295
+[21:09:10.260980] Epoch: [5]  [35/36]  eta: 0:00:00  lr: 0.000149  loss: 0.8174 (0.8637)  time: 0.2790  data: 0.0202  max mem: 34295
+[21:09:10.366175] Epoch: [5] Total time: 0:00:13 (0.3720 s / it)
+[21:09:10.367221] Averaged stats: lr: 0.000149  loss: 0.8174 (0.8637)
+[21:09:10.373820] log_dir: output_dir3
+[21:09:13.893341] Epoch: [6]  [ 0/36]  eta: 0:02:06  lr: 0.000150  loss: 0.7792 (0.7792)  time: 3.5188  data: 3.2626  max mem: 34295

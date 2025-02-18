@@ -1,0 +1,1 @@
+EPOCH: 84, STATUS: model_saved, ACC: 25.25%
