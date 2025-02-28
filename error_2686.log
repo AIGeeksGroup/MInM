@@ -1,0 +1,104 @@
+/var/spool/slurmd/job02686/slurm_script: line 16: /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh: No such file or directory
+/var/spool/slurmd/job02686/slurm_script: line 17: /home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Appending key for api.wandb.ai to your netrc file: /home/ytia0661@acfr.usyd.edu.au/.netrc
+wandb: Currently logged in as: ytia0661 (ytia0661-the-university-of-sydney) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.7.dev1
+wandb: Run data is saved locally in /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/wandb/run-20250224_001642-wazbhs7y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run MAE_imagenette_bs256_epoch600_withevaluate
+wandb: ⭐️ View project at https://wandb.ai/visual-intelligence-laboratory/MInM
+wandb: 🚀 View run at https://wandb.ai/visual-intelligence-laboratory/MInM/runs/wazbhs7y
+[rank0]:[W224 00:16:44.114234923 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/util/misc.py:270: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb8.py", line 323, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb8.py", line 266, in main
+[rank0]:     train_stats = train_one_epoch(
+[rank0]:                   ^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/engine_pretrain2.py", line 39, in train_one_epoch
+[rank0]:     for data_iter_step, (samples, mask_paths, class_indices) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/util/misc.py", line 145, in log_every
+[rank0]:     for obj in iterable:
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 708, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1480, in _next_data
+[rank0]:     return self._process_data(data)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1505, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/_utils.py", line 733, in reraise
+[rank0]:     raise exception
+[rank0]: RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+[rank0]:     data = [self.dataset[idx] for idx in possibly_batched_index]
+[rank0]:             ~~~~~~~~~~~~^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb8.py", line 99, in __getitem__
+[rank0]:     mask = self.transform(mask)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torchvision/transforms/transforms.py", line 95, in __call__
+[rank0]:     img = t(img)
+[rank0]:           ^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torchvision/transforms/transforms.py", line 277, in forward
+[rank0]:     return F.normalize(tensor, self.mean, self.std, self.inplace)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torchvision/transforms/functional.py", line 350, in normalize
+[rank0]:     return F_t.normalize(tensor, mean=mean, std=std, inplace=inplace)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torchvision/transforms/_functional_tensor.py", line 928, in normalize
+[rank0]:     return tensor.sub_(mean).div_(std)
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: output with shape [1, 224, 224] doesn't match the broadcast shape [3, 224, 224]
+
+E0224 00:16:56.278000 361576 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 361590) of binary: /home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/bin/python
+Traceback (most recent call last):
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+trainwandb8.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-24_00:16:56
+  host      : blc37-j04-1.acfr.usyd.edu.au
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 361590)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

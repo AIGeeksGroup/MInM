@@ -1,0 +1,9 @@
+/var/spool/slurmd/job02655/slurm_script: line 16: /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh: No such file or directory
+/var/spool/slurmd/job02655/slurm_script: line 17: /home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+Traceback (most recent call last):
+  File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/sam_topk_multiple.py", line 2, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'

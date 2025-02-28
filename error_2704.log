@@ -1,0 +1,22 @@
+/var/spool/slurmd/job02704/slurm_script: line 16: /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh: No such file or directory
+/var/spool/slurmd/job02704/slurm_script: line 17: /home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Appending key for api.wandb.ai to your netrc file: /home/ytia0661@acfr.usyd.edu.au/.netrc
+wandb: Currently logged in as: ytia0661 (ytia0661-the-university-of-sydney) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: creating run
+wandb: Tracking run with wandb version 0.19.7.dev1
+wandb: Run data is saved locally in /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/wandb/run-20250224_150411-e0fin8p5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run MAE_imagenette_bs256_epoch600_withevaluate
+wandb: ⭐️ View project at https://wandb.ai/visual-intelligence-laboratory/MInM
+wandb: 🚀 View run at https://wandb.ai/visual-intelligence-laboratory/MInM/runs/e0fin8p5
+[rank0]:[W224 15:04:16.147261429 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/util/misc.py:270: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/engine_pretrain2.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast():
+[rank0]:[W224 15:04:37.825173544 reducer.cpp:1400] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+slurmstepd-erinyes: error: *** JOB 2704 ON erinyes CANCELLED AT 2025-02-24T15:09:47 ***

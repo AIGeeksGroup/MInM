@@ -77,9 +77,9 @@ def get_args_parser():
     # Dataset parameters
     parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette', type=str,
                         help='dataset path')
-    parser.add_argument('--output_dir', default='output_dir4',
+    parser.add_argument('--output_dir', default='output_dir6',
                         help='path where to save, empty for no saving')
-    parser.add_argument('--log_dir', default='output_dir4',
+    parser.add_argument('--log_dir', default='output_dir6',
                         help='path where to tensorboard log')
     parser.add_argument('--device', default='cuda',
                         help='device to use for training / testing')
@@ -112,7 +112,7 @@ def main(args):
             project="MInM",
             entity="visual-intelligence-laboratory",  
             config=vars(args),
-            name="MAE_imagenette_bs256_epoch600_withevaluate"
+            name="MAE_imagenette_bs256_epoch600_withevaluate_acc1+acc5"
         )
     misc.init_distributed_mode(args)
     print('job dir: {}'.format(os.path.dirname(os.path.realpath(__file__))))
@@ -193,7 +193,8 @@ def main(args):
 
     print(f"Start training for {args.epochs} epochs")
     start_time = time.time()
-    best_accuracy = 0.0
+    best_acc1 = 0.0
+    best_acc5 = 0.0
     for epoch in range(args.start_epoch, args.epochs):
         if args.distributed:
             data_loader_train.sampler.set_epoch(epoch)
@@ -211,18 +212,19 @@ def main(args):
                 'train_loss': train_stats.get('loss', None),
                 'learning_rate': current_lr,
             })
-        if epoch % 10 == 2 or epoch + 1 == args.epochs:
+        if epoch % 15 == 2 or epoch + 1 == args.epochs:
             misc.save_model(
                             args=args, model=model, model_without_ddp=model_without_ddp, optimizer=optimizer,
                             loss_scaler=loss_scaler, epoch=epoch, name="temporary.pth"
                         )
             if misc.is_main_process():
-                current_accuracy = linear_probing("./output_dir4/temporary.pth", args)
-                print(f"Current best accuracy after linear probing: {current_accuracy:.2f}%")
-                wandb.log({'best_accuracy': current_accuracy})
+                current_acc1, current_acc5 = linear_probing("./output_dir6/temporary.pth", args)
+                print(f"Current best accuracy after linear probing: {current_acc1:.2f}%")
+                wandb.log({'best_acc1': current_acc1})
+                wandb.log({'best_acc5': current_acc5})
                 
-                if current_accuracy > best_accuracy:
-                    best_accuracy = current_accuracy  
+                if current_acc1 > best_acc1:
+                    best_acc1 = current_acc1
                     if args.output_dir:
                         misc.save_model(
                             args=args, model=model, model_without_ddp=model_without_ddp, optimizer=optimizer,

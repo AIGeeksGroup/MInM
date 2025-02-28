@@ -190,7 +190,7 @@ def linear_probing(model_path,args1):
     )
 
     if not args2.eval:
-        checkpoint = torch.load(model_path)
+        checkpoint = torch.load(model_path, weights_only=False)
         print("Load pre-trained checkpoint from: %s" % model_path)
         checkpoint_model = checkpoint['model']
 
@@ -263,9 +263,11 @@ def linear_probing(model_path,args1):
         exit(0)
 
     best_acc1=0.0
+    best_acc5=0.0
     print(f"Start training for {args2.epochs} epochs")
     start_time = time.time()
     max_accuracy = 0.0
+
     for epoch in range(args2.start_epoch, args2.epochs):
         if args2.distributed:
             data_loader_train.sampler.set_epoch(epoch)
@@ -282,8 +284,12 @@ def linear_probing(model_path,args1):
         max_accuracy = max(max_accuracy, test_stats["acc1"])
         print(f'Max accuracy: {max_accuracy:.2f}%')
         current_acc1=test_stats['acc1']
+        current_acc5=test_stats['acc5']
         if current_acc1 > best_acc1:
             best_acc1 = current_acc1
+
+        if current_acc5 > best_acc5:
+            best_acc5 = current_acc5
 
         if log_writer is not None:
             log_writer.add_scalar('perf/test_acc1', test_stats['acc1'], epoch)
@@ -304,4 +310,4 @@ def linear_probing(model_path,args1):
     total_time = time.time() - start_time
     total_time_str = str(datetime.timedelta(seconds=int(total_time)))
     print('Training time {}'.format(total_time_str))
-    return best_acc1
+    return best_acc1, best_acc5

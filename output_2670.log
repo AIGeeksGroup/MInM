@@ -1,0 +1,70 @@
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/condabin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda-env
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/activate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/deactivate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.csh
+no change     /home/ytia0661@acfr.usyd.edu.au/.bashrc
+No action taken.
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/condabin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda-env
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/activate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/deactivate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.csh
+no change     /home/ytia0661@acfr.usyd.edu.au/.bashrc
+No action taken.
+Sun Feb 23 20:57:17 2025       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA L4                      Off | 00000000:0D:00.0 Off |                    0 |
+| N/A   46C    P0              21W /  72W |     13MiB / 23034MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA L4                      Off | 00000000:37:00.0 Off |                    0 |
+| N/A   46C    P0              20W /  72W |     13MiB / 23034MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A40                     Off | 00000000:4A:00.0 Off |                    0 |
+|  0%   64C    P0             207W / 300W |  38663MiB / 46068MiB |    100%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A40                     Off | 00000000:CA:00.0 Off |                    0 |
+|  0%   64C    P0             217W / 300W |  38294MiB / 46068MiB |    100%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   4  NVIDIA A40                     Off | 00000000:E1:00.0 Off |                    0 |
+|  0%   62C    P0             203W / 300W |  37512MiB / 46068MiB |    100%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      2305      G   /usr/lib/xorg/Xorg                            4MiB |
+|    1   N/A  N/A      2305      G   /usr/lib/xorg/Xorg                            4MiB |
+|    2   N/A  N/A      2305      G   /usr/lib/xorg/Xorg                            4MiB |
+|    2   N/A  N/A    948639      C   /opt/conda/envs/frnet/bin/python          38642MiB |
+|    3   N/A  N/A      2305      G   /usr/lib/xorg/Xorg                            4MiB |
+|    3   N/A  N/A    948640      C   /opt/conda/envs/frnet/bin/python          38272MiB |
+|    4   N/A  N/A      2305      G   /usr/lib/xorg/Xorg                            4MiB |
+|    4   N/A  N/A    948641      C   /opt/conda/envs/frnet/bin/python          37490MiB |
++---------------------------------------------------------------------------------------+
+✅ 处理完成，所有文件已保存至 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask

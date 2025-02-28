@@ -1,0 +1,56 @@
+/var/spool/slurmd/job02685/slurm_script: line 16: /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh: No such file or directory
+/var/spool/slurmd/job02685/slurm_script: line 17: /home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda: No such file or directory
+
+CondaError: Run 'conda init' before 'conda activate'
+
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Appending key for api.wandb.ai to your netrc file: /home/ytia0661@acfr.usyd.edu.au/.netrc
+wandb: Currently logged in as: ytia0661 (ytia0661-the-university-of-sydney) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: creating run
+wandb: Tracking run with wandb version 0.19.7.dev1
+wandb: Run data is saved locally in /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/wandb/run-20250224_000547-fhw3w7cb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run MAE_imagenette_bs256_epoch600_withevaluate
+wandb: ⭐️ View project at https://wandb.ai/visual-intelligence-laboratory/MInM
+wandb: 🚀 View run at https://wandb.ai/visual-intelligence-laboratory/MInM/runs/fhw3w7cb
+[rank0]:[W224 00:05:49.395431472 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb8.py", line 323, in <module>
+[rank0]:     main(args)
+[rank0]:   File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb8.py", line 203, in main
+[rank0]:     raise ValueError("❌ 错误！数据集为空，请检查数据路径是否正确。")
+[rank0]: ValueError: ❌ 错误！数据集为空，请检查数据路径是否正确。
+[rank0]:[W224 00:06:06.628272957 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+E0224 00:06:07.588000 359568 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 359600) of binary: /home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/bin/python
+Traceback (most recent call last):
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+trainwandb8.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-02-24_00:06:07
+  host      : blc37-j04-1.acfr.usyd.edu.au
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 359600)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

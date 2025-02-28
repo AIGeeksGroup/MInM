@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/timm/__init__.py", line 2, in <module>
+    from .models import create_model, list_models, is_model, list_modules, model_entrypoint, \
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/timm/models/__init__.py", line 1, in <module>
+    from .cspnet import *
+  File "/home/ytia0661@acfr.usyd.edu.au/anaconda3/envs/gpupytorch/lib/python3.11/site-packages/timm/models/cspnet.py", line 17, in <module>
+    import torch.nn.functional as F
+ModuleNotFoundError: No module named 'torch.nn.functional'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: module 'torch' has no attribute '__version__'
+Traceback (most recent call last):
+  File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb8.py", line 24, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'

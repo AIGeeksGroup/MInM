@@ -1,0 +1,1014 @@
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/condabin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda-env
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/activate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/deactivate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.csh
+no change     /home/ytia0661@acfr.usyd.edu.au/.bashrc
+No action taken.
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/condabin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/conda-env
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/activate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/bin/deactivate
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.csh
+no change     /home/ytia0661@acfr.usyd.edu.au/.bashrc
+No action taken.
+| distributed init (rank 0): env://, gpu 0
+[00:51:14.765069] job dir: /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae
+[00:51:14.765989] Namespace(batch_size=256,
+epochs=600,
+accum_iter=1,
+model='mae_vit_large_patch16',
+input_size=224,
+mask_ratio=0.75,
+norm_pix_loss=False,
+weight_decay=0.05,
+lr=None,
+blr=0.001,
+min_lr=0.0,
+warmup_epochs=40,
+data_path='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette',
+output_dir='output_dir3',
+log_dir='output_dir3',
+device='cuda',
+seed=0,
+resume='',
+start_epoch=0,
+num_workers=10,
+pin_mem=True,
+world_size=1,
+local_rank=-1,
+dist_on_itp=False,
+dist_url='env://',
+rank=0,
+gpu=0,
+distributed=True,
+dist_backend='nccl')
+[00:51:14.778522] 检测到 10 个类别: ['n01440764', 'n02102040', 'n02979186', 'n03000684', 'n03028079', 'n03394916', 'n03417042', 'n03425413', 'n03445777', 'n03888257']
+[00:51:14.799330] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/ILSVRC2012_val_00028158_mask_applied.png 对应的 mask！
+[00:51:14.842803] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_11486_mask_applied.png 对应的 mask！
+[00:51:14.844559] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_1155_mask_applied.png 对应的 mask！
+[00:51:14.848645] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_11668_mask_applied.png 对应的 mask！
+[00:51:14.862270] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_12339_mask_applied.png 对应的 mask！
+[00:51:14.863374] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_12423_mask_applied.png 对应的 mask！
+[00:51:14.866415] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_12548_mask_applied.png 对应的 mask！
+[00:51:14.868467] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_12619_mask_applied.png 对应的 mask！
+[00:51:14.874441] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_12898_mask_applied.png 对应的 mask！
+[00:51:14.894272] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_1379_mask_applied.png 对应的 mask！
+[00:51:14.910893] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_15073_mask_applied.png 对应的 mask！
+[00:51:14.912895] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_1566_mask_applied.png 对应的 mask！
+[00:51:14.914603] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_1666_mask_applied.png 对应的 mask！
+[00:51:14.924652] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_1973_mask_applied.png 对应的 mask！
+[00:51:14.931245] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_21043_mask_applied.png 对应的 mask！
+[00:51:14.931599] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_21095_mask_applied.png 对应的 mask！
+[00:51:14.931912] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_2117_mask_applied.png 对应的 mask！
+[00:51:14.947298] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_2385_mask_applied.png 对应的 mask！
+[00:51:14.948400] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_2427_mask_applied.png 对应的 mask！
+[00:51:14.958647] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_2803_mask_applied.png 对应的 mask！
+[00:51:14.963026] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_2919_mask_applied.png 对应的 mask！
+[00:51:14.980097] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_3368_mask_applied.png 对应的 mask！
+[00:51:14.999153] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_449_mask_applied.png 对应的 mask！
+[00:51:15.003834] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_4737_mask_applied.png 对应的 mask！
+[00:51:15.012676] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_5068_mask_applied.png 对应的 mask！
+[00:51:15.016820] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_5239_mask_applied.png 对应的 mask！
+[00:51:15.022632] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_5364_mask_applied.png 对应的 mask！
+[00:51:15.031517] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_5628_mask_applied.png 对应的 mask！
+[00:51:15.043939] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_5946_mask_applied.png 对应的 mask！
+[00:51:15.046369] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_6075_mask_applied.png 对应的 mask！
+[00:51:15.068669] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_6714_mask_applied.png 对应的 mask！
+[00:51:15.075575] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_7004_mask_applied.png 对应的 mask！
+[00:51:15.077955] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_7157_mask_applied.png 对应的 mask！
+[00:51:15.089208] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_7425_mask_applied.png 对应的 mask！
+[00:51:15.089840] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_7428_mask_applied.png 对应的 mask！
+[00:51:15.095527] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_7558_mask_applied.png 对应的 mask！
+[00:51:15.129445] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8163_mask_applied.png 对应的 mask！
+[00:51:15.133109] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8334_mask_applied.png 对应的 mask！
+[00:51:15.151681] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8613_mask_applied.png 对应的 mask！
+[00:51:15.152074] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8623_mask_applied.png 对应的 mask！
+[00:51:15.153613] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8689_mask_applied.png 对应的 mask！
+[00:51:15.156777] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8826_mask_applied.png 对应的 mask！
+[00:51:15.161539] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_8938_mask_applied.png 对应的 mask！
+[00:51:15.163990] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_9178_mask_applied.png 对应的 mask！
+[00:51:15.168882] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_9428_mask_applied.png 对应的 mask！
+[00:51:15.172309] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_9533_mask_applied.png 对应的 mask！
+[00:51:15.174036] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_96_mask_applied.png 对应的 mask！
+[00:51:15.175704] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_9649_mask_applied.png 对应的 mask！
+[00:51:15.177240] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n01440764/n01440764_9695_mask_applied.png 对应的 mask！
+[00:51:15.206729] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/ILSVRC2012_val_00035723_mask_applied.png 对应的 mask！
+[00:51:15.208050] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/ILSVRC2012_val_00040876_mask_applied.png 对应的 mask！
+[00:51:15.208430] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/ILSVRC2012_val_00043994_mask_applied.png 对应的 mask！
+[00:51:15.212371] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1028_mask_applied.png 对应的 mask！
+[00:51:15.214300] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1055_mask_applied.png 对应的 mask！
+[00:51:15.216473] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1076_mask_applied.png 对应的 mask！
+[00:51:15.216812] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1077_mask_applied.png 对应的 mask！
+[00:51:15.220208] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1106_mask_applied.png 对应的 mask！
+[00:51:15.225963] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1183_mask_applied.png 对应的 mask！
+[00:51:15.227942] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1224_mask_applied.png 对应的 mask！
+[00:51:15.232268] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1264_mask_applied.png 对应的 mask！
+[00:51:15.236584] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1303_mask_applied.png 对应的 mask！
+[00:51:15.238177] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1325_mask_applied.png 对应的 mask！
+[00:51:15.240657] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_139_mask_applied.png 对应的 mask！
+[00:51:15.244655] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1487_mask_applied.png 对应的 mask！
+[00:51:15.262908] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_155_mask_applied.png 对应的 mask！
+[00:51:15.295900] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1688_mask_applied.png 对应的 mask！
+[00:51:15.330501] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1824_mask_applied.png 对应的 mask！
+[00:51:15.331451] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1837_mask_applied.png 对应的 mask！
+[00:51:15.341841] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_1913_mask_applied.png 对应的 mask！
+[00:51:15.364622] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2013_mask_applied.png 对应的 mask！
+[00:51:15.366991] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2018_mask_applied.png 对应的 mask！
+[00:51:15.367354] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_203_mask_applied.png 对应的 mask！
+[00:51:15.370403] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2079_mask_applied.png 对应的 mask！
+[00:51:15.370754] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_208_mask_applied.png 对应的 mask！
+[00:51:15.380476] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2149_mask_applied.png 对应的 mask！
+[00:51:15.387017] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2313_mask_applied.png 对应的 mask！
+[00:51:15.387944] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2317_mask_applied.png 对应的 mask！
+[00:51:15.391875] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2377_mask_applied.png 对应的 mask！
+[00:51:15.394775] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2455_mask_applied.png 对应的 mask！
+[00:51:15.403467] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2528_mask_applied.png 对应的 mask！
+[00:51:15.405216] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2583_mask_applied.png 对应的 mask！
+[00:51:15.406637] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2598_mask_applied.png 对应的 mask！
+[00:51:15.408327] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2674_mask_applied.png 对应的 mask！
+[00:51:15.409637] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2696_mask_applied.png 对应的 mask！
+[00:51:15.412362] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2785_mask_applied.png 对应的 mask！
+[00:51:15.413687] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2806_mask_applied.png 对应的 mask！
+[00:51:15.419215] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2959_mask_applied.png 对应的 mask！
+[00:51:15.420144] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2979_mask_applied.png 对应的 mask！
+[00:51:15.421882] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_2989_mask_applied.png 对应的 mask！
+[00:51:15.423019] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3013_mask_applied.png 对应的 mask！
+[00:51:15.423361] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3019_mask_applied.png 对应的 mask！
+[00:51:15.424058] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3027_mask_applied.png 对应的 mask！
+[00:51:15.425345] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3048_mask_applied.png 对应的 mask！
+[00:51:15.426346] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3066_mask_applied.png 对应的 mask！
+[00:51:15.428935] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3103_mask_applied.png 对应的 mask！
+[00:51:15.436922] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_328_mask_applied.png 对应的 mask！
+[00:51:15.439901] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_335_mask_applied.png 对应的 mask！
+[00:51:15.446504] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3495_mask_applied.png 对应的 mask！
+[00:51:15.458177] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3719_mask_applied.png 对应的 mask！
+[00:51:15.460679] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3806_mask_applied.png 对应的 mask！
+[00:51:15.462007] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3855_mask_applied.png 对应的 mask！
+[00:51:15.463571] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_388_mask_applied.png 对应的 mask！
+[00:51:15.466104] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_3937_mask_applied.png 对应的 mask！
+[00:51:15.475186] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4066_mask_applied.png 对应的 mask！
+[00:51:15.477780] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4158_mask_applied.png 对应的 mask！
+[00:51:15.479604] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4228_mask_applied.png 对应的 mask！
+[00:51:15.480528] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4256_mask_applied.png 对应的 mask！
+[00:51:15.481574] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4299_mask_applied.png 对应的 mask！
+[00:51:15.488302] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4484_mask_applied.png 对应的 mask！
+[00:51:15.489418] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_449_mask_applied.png 对应的 mask！
+[00:51:15.497568] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4554_mask_applied.png 对应的 mask！
+[00:51:15.505235] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4747_mask_applied.png 对应的 mask！
+[00:51:15.514898] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_4979_mask_applied.png 对应的 mask！
+[00:51:15.517616] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5037_mask_applied.png 对应的 mask！
+[00:51:15.520025] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5099_mask_applied.png 对应的 mask！
+[00:51:15.521493] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5136_mask_applied.png 对应的 mask！
+[00:51:15.522259] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5145_mask_applied.png 对应的 mask！
+[00:51:15.522602] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5156_mask_applied.png 对应的 mask！
+[00:51:15.525122] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_519_mask_applied.png 对应的 mask！
+[00:51:15.530420] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5388_mask_applied.png 对应的 mask！
+[00:51:15.538888] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5549_mask_applied.png 对应的 mask！
+[00:51:15.551821] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_584_mask_applied.png 对应的 mask！
+[00:51:15.552231] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5845_mask_applied.png 对应的 mask！
+[00:51:15.555732] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_5915_mask_applied.png 对应的 mask！
+[00:51:15.568797] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6123_mask_applied.png 对应的 mask！
+[00:51:15.575122] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6296_mask_applied.png 对应的 mask！
+[00:51:15.575472] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6298_mask_applied.png 对应的 mask！
+[00:51:15.578234] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_637_mask_applied.png 对应的 mask！
+[00:51:15.578723] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6388_mask_applied.png 对应的 mask！
+[00:51:15.582039] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6447_mask_applied.png 对应的 mask！
+[00:51:15.584026] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6494_mask_applied.png 对应的 mask！
+[00:51:15.584612] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_6513_mask_applied.png 对应的 mask！
+[00:51:15.586254] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_659_mask_applied.png 对应的 mask！
+[00:51:15.603507] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_709_mask_applied.png 对应的 mask！
+[00:51:15.603900] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7099_mask_applied.png 对应的 mask！
+[00:51:15.604711] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7125_mask_applied.png 对应的 mask！
+[00:51:15.605425] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_715_mask_applied.png 对应的 mask！
+[00:51:15.606018] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_716_mask_applied.png 对应的 mask！
+[00:51:15.610436] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7188_mask_applied.png 对应的 mask！
+[00:51:15.612009] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7195_mask_applied.png 对应的 mask！
+[00:51:15.612932] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_726_mask_applied.png 对应的 mask！
+[00:51:15.617102] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7406_mask_applied.png 对应的 mask！
+[00:51:15.622867] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7525_mask_applied.png 对应的 mask！
+[00:51:15.646077] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_768_mask_applied.png 对应的 mask！
+[00:51:15.646551] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7688_mask_applied.png 对应的 mask！
+[00:51:15.657082] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_7728_mask_applied.png 对应的 mask！
+[00:51:15.683976] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_8207_mask_applied.png 对应的 mask！
+[00:51:15.684874] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_8236_mask_applied.png 对应的 mask！
+[00:51:15.689519] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_8327_mask_applied.png 对应的 mask！
+[00:51:15.690526] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_8457_mask_applied.png 对应的 mask！
+[00:51:15.693321] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_868_mask_applied.png 对应的 mask！
+[00:51:15.696080] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_895_mask_applied.png 对应的 mask！
+[00:51:15.699646] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_948_mask_applied.png 对应的 mask！
+[00:51:15.704460] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_987_mask_applied.png 对应的 mask！
+[00:51:15.706401] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02102040/n02102040_994_mask_applied.png 对应的 mask！
+[00:51:15.712130] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/ILSVRC2012_val_00002034_mask_applied.png 对应的 mask！
+[00:51:15.719109] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/ILSVRC2012_val_00017463_mask_applied.png 对应的 mask！
+[00:51:15.754294] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_11206_mask_applied.png 对应的 mask！
+[00:51:15.760297] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_11578_mask_applied.png 对应的 mask！
+[00:51:15.770963] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_11883_mask_applied.png 对应的 mask！
+[00:51:15.772843] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_11918_mask_applied.png 对应的 mask！
+[00:51:15.778130] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_11999_mask_applied.png 对应的 mask！
+[00:51:15.792029] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_12305_mask_applied.png 对应的 mask！
+[00:51:15.797298] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_12846_mask_applied.png 对应的 mask！
+[00:51:15.801390] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_13055_mask_applied.png 对应的 mask！
+[00:51:15.831897] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_14563_mask_applied.png 对应的 mask！
+[00:51:15.833702] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_1467_mask_applied.png 对应的 mask！
+[00:51:15.838176] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_14964_mask_applied.png 对应的 mask！
+[00:51:15.845803] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_15278_mask_applied.png 对应的 mask！
+[00:51:15.874562] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_17986_mask_applied.png 对应的 mask！
+[00:51:15.876539] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_1816_mask_applied.png 对应的 mask！
+[00:51:15.883888] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_1897_mask_applied.png 对应的 mask！
+[00:51:15.887555] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_19604_mask_applied.png 对应的 mask！
+[00:51:15.900728] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_20619_mask_applied.png 对应的 mask！
+[00:51:15.901601] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_20698_mask_applied.png 对应的 mask！
+[00:51:15.922641] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_21847_mask_applied.png 对应的 mask！
+[00:51:15.929823] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_22575_mask_applied.png 对应的 mask！
+[00:51:15.934164] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_23044_mask_applied.png 对应的 mask！
+[00:51:15.982194] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_287_mask_applied.png 对应的 mask！
+[00:51:16.018606] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_4044_mask_applied.png 对应的 mask！
+[00:51:16.023113] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_4313_mask_applied.png 对应的 mask！
+[00:51:16.027351] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_4526_mask_applied.png 对应的 mask！
+[00:51:16.054290] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_5679_mask_applied.png 对应的 mask！
+[00:51:16.058928] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_587_mask_applied.png 对应的 mask！
+[00:51:16.070654] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_678_mask_applied.png 对应的 mask！
+[00:51:16.073671] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_7103_mask_applied.png 对应的 mask！
+[00:51:16.090863] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_8409_mask_applied.png 对应的 mask！
+[00:51:16.104871] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n02979186/n02979186_9239_mask_applied.png 对应的 mask！
+[00:51:16.125884] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/ILSVRC2012_val_00031549_mask_applied.png 对应的 mask！
+[00:51:16.129819] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/ILSVRC2012_val_00048919_mask_applied.png 对应的 mask！
+[00:51:16.136457] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_10569_mask_applied.png 对应的 mask！
+[00:51:16.137918] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_10665_mask_applied.png 对应的 mask！
+[00:51:16.149637] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_11208_mask_applied.png 对应的 mask！
+[00:51:16.153988] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_11348_mask_applied.png 对应的 mask！
+[00:51:16.154995] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_1139_mask_applied.png 对应的 mask！
+[00:51:16.155665] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_11465_mask_applied.png 对应的 mask！
+[00:51:16.158583] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_11628_mask_applied.png 对应的 mask！
+[00:51:16.167150] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_12575_mask_applied.png 对应的 mask！
+[00:51:16.168551] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_12878_mask_applied.png 对应的 mask！
+[00:51:16.176155] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_13587_mask_applied.png 对应的 mask！
+[00:51:16.181164] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_13727_mask_applied.png 对应的 mask！
+[00:51:16.187080] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_14184_mask_applied.png 对应的 mask！
+[00:51:16.189506] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_14354_mask_applied.png 对应的 mask！
+[00:51:16.203354] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_15194_mask_applied.png 对应的 mask！
+[00:51:16.204863] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_15283_mask_applied.png 对应的 mask！
+[00:51:16.207915] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_15364_mask_applied.png 对应的 mask！
+[00:51:16.213450] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_15858_mask_applied.png 对应的 mask！
+[00:51:16.214141] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_15977_mask_applied.png 对应的 mask！
+[00:51:16.217121] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_16097_mask_applied.png 对应的 mask！
+[00:51:16.222898] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_16448_mask_applied.png 对应的 mask！
+[00:51:16.224317] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_16517_mask_applied.png 对应的 mask！
+[00:51:16.233928] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_16807_mask_applied.png 对应的 mask！
+[00:51:16.252667] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_17416_mask_applied.png 对应的 mask！
+[00:51:16.263107] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_18596_mask_applied.png 对应的 mask！
+[00:51:16.263922] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_18788_mask_applied.png 对应的 mask！
+[00:51:16.268384] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_19594_mask_applied.png 对应的 mask！
+[00:51:16.276073] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_19753_mask_applied.png 对应的 mask！
+[00:51:16.281301] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_2035_mask_applied.png 对应的 mask！
+[00:51:16.285806] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_2106_mask_applied.png 对应的 mask！
+[00:51:16.290853] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_2219_mask_applied.png 对应的 mask！
+[00:51:16.296343] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_2264_mask_applied.png 对应的 mask！
+[00:51:16.296766] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_2265_mask_applied.png 对应的 mask！
+[00:51:16.341704] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_26247_mask_applied.png 对应的 mask！
+[00:51:16.358059] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_28765_mask_applied.png 对应的 mask！
+[00:51:16.361333] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_293_mask_applied.png 对应的 mask！
+[00:51:16.365794] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_3008_mask_applied.png 对应的 mask！
+[00:51:16.377531] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_3216_mask_applied.png 对应的 mask！
+[00:51:16.380157] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_32468_mask_applied.png 对应的 mask！
+[00:51:16.389620] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_34235_mask_applied.png 对应的 mask！
+[00:51:16.417661] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_36449_mask_applied.png 对应的 mask！
+[00:51:16.433276] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_4575_mask_applied.png 对应的 mask！
+[00:51:16.435338] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_4717_mask_applied.png 对应的 mask！
+[00:51:16.436057] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_4746_mask_applied.png 对应的 mask！
+[00:51:16.438509] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_4989_mask_applied.png 对应的 mask！
+[00:51:16.443920] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_5433_mask_applied.png 对应的 mask！
+[00:51:16.451120] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_598_mask_applied.png 对应的 mask！
+[00:51:16.455388] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_6266_mask_applied.png 对应的 mask！
+[00:51:16.456082] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_6279_mask_applied.png 对应的 mask！
+[00:51:16.462116] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_6516_mask_applied.png 对应的 mask！
+[00:51:16.463622] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_6696_mask_applied.png 对应的 mask！
+[00:51:16.489493] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_8553_mask_applied.png 对应的 mask！
+[00:51:16.496989] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_8965_mask_applied.png 对应的 mask！
+[00:51:16.497426] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_8985_mask_applied.png 对应的 mask！
+[00:51:16.512392] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03000684/n03000684_948_mask_applied.png 对应的 mask！
+[00:51:16.561146] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_10014_mask_applied.png 对应的 mask！
+[00:51:16.570671] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_10138_mask_applied.png 对应的 mask！
+[00:51:16.602555] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_10717_mask_applied.png 对应的 mask！
+[00:51:16.650957] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_14263_mask_applied.png 对应的 mask！
+[00:51:16.665873] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_15438_mask_applied.png 对应的 mask！
+[00:51:16.667903] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_15539_mask_applied.png 对应的 mask！
+[00:51:16.674542] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_16118_mask_applied.png 对应的 mask！
+[00:51:16.693140] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_17175_mask_applied.png 对应的 mask！
+[00:51:16.743377] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_236_mask_applied.png 对应的 mask！
+[00:51:16.780547] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_26859_mask_applied.png 对应的 mask！
+[00:51:16.816303] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_3395_mask_applied.png 对应的 mask！
+[00:51:16.832802] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_38969_mask_applied.png 对应的 mask！
+[00:51:16.957561] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_60013_mask_applied.png 对应的 mask！
+[00:51:16.981265] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_6607_mask_applied.png 对应的 mask！
+[00:51:17.051821] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_8596_mask_applied.png 对应的 mask！
+[00:51:17.079305] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_9453_mask_applied.png 对应的 mask！
+[00:51:17.087683] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03028079/n03028079_9867_mask_applied.png 对应的 mask！
+[00:51:17.105625] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/ILSVRC2012_val_00046669_mask_applied.png 对应的 mask！
+[00:51:17.108159] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_10835_mask_applied.png 对应的 mask！
+[00:51:17.108524] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_109_mask_applied.png 对应的 mask！
+[00:51:17.110521] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_1163_mask_applied.png 对应的 mask！
+[00:51:17.114936] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_13007_mask_applied.png 对应的 mask！
+[00:51:17.116662] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_13489_mask_applied.png 对应的 mask！
+[00:51:17.119018] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_13957_mask_applied.png 对应的 mask！
+[00:51:17.119925] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_14327_mask_applied.png 对应的 mask！
+[00:51:17.121487] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_15038_mask_applied.png 对应的 mask！
+[00:51:17.126671] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_16023_mask_applied.png 对应的 mask！
+[00:51:17.132097] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_16555_mask_applied.png 对应的 mask！
+[00:51:17.134924] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_1695_mask_applied.png 对应的 mask！
+[00:51:17.136700] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_17985_mask_applied.png 对应的 mask！
+[00:51:17.143373] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_1906_mask_applied.png 对应的 mask！
+[00:51:17.145140] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_19534_mask_applied.png 对应的 mask！
+[00:51:17.151076] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_21205_mask_applied.png 对应的 mask！
+[00:51:17.155680] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_21597_mask_applied.png 对应的 mask！
+[00:51:17.162026] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_23259_mask_applied.png 对应的 mask！
+[00:51:17.163818] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_23424_mask_applied.png 对应的 mask！
+[00:51:17.164772] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_23556_mask_applied.png 对应的 mask！
+[00:51:17.166666] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_24023_mask_applied.png 对应的 mask！
+[00:51:17.174254] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_26248_mask_applied.png 对应的 mask！
+[00:51:17.185143] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_27375_mask_applied.png 对应的 mask！
+[00:51:17.213130] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_2929_mask_applied.png 对应的 mask！
+[00:51:17.242695] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_31234_mask_applied.png 对应的 mask！
+[00:51:17.251998] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_32568_mask_applied.png 对应的 mask！
+[00:51:17.269175] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_33663_mask_applied.png 对应的 mask！
+[00:51:17.278674] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_3436_mask_applied.png 对应的 mask！
+[00:51:17.285289] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_34647_mask_applied.png 对应的 mask！
+[00:51:17.307109] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_35869_mask_applied.png 对应的 mask！
+[00:51:17.340288] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_36506_mask_applied.png 对应的 mask！
+[00:51:17.349457] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_3699_mask_applied.png 对应的 mask！
+[00:51:17.350327] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_3705_mask_applied.png 对应的 mask！
+[00:51:17.357908] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_37365_mask_applied.png 对应的 mask！
+[00:51:17.397353] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_40029_mask_applied.png 对应的 mask！
+[00:51:17.408283] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_41133_mask_applied.png 对应的 mask！
+[00:51:17.411335] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_4156_mask_applied.png 对应的 mask！
+[00:51:17.456169] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_46945_mask_applied.png 对应的 mask！
+[00:51:17.461222] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_47423_mask_applied.png 对应的 mask！
+[00:51:17.463162] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_4796_mask_applied.png 对应的 mask！
+[00:51:17.465714] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_48463_mask_applied.png 对应的 mask！
+[00:51:17.468673] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_49493_mask_applied.png 对应的 mask！
+[00:51:17.470646] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_50609_mask_applied.png 对应的 mask！
+[00:51:17.472075] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_51168_mask_applied.png 对应的 mask！
+[00:51:17.473821] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_51543_mask_applied.png 对应的 mask！
+[00:51:17.493904] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_54395_mask_applied.png 对应的 mask！
+[00:51:17.496187] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_54643_mask_applied.png 对应的 mask！
+[00:51:17.498907] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_55317_mask_applied.png 对应的 mask！
+[00:51:17.501644] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_56426_mask_applied.png 对应的 mask！
+[00:51:17.503639] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_57165_mask_applied.png 对应的 mask！
+[00:51:17.511829] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_59127_mask_applied.png 对应的 mask！
+[00:51:17.512291] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_59176_mask_applied.png 对应的 mask！
+[00:51:17.515703] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_60697_mask_applied.png 对应的 mask！
+[00:51:17.517311] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_6118_mask_applied.png 对应的 mask！
+[00:51:17.523287] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_6283_mask_applied.png 对应的 mask！
+[00:51:17.524343] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_63319_mask_applied.png 对应的 mask！
+[00:51:17.526815] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_6694_mask_applied.png 对应的 mask！
+[00:51:17.538040] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_8274_mask_applied.png 对应的 mask！
+[00:51:17.538659] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_8566_mask_applied.png 对应的 mask！
+[00:51:17.539786] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03394916/n03394916_8736_mask_applied.png 对应的 mask！
+[00:51:17.590642] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_10259_mask_applied.png 对应的 mask！
+[00:51:17.735680] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_18615_mask_applied.png 对应的 mask！
+[00:51:17.750860] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_20489_mask_applied.png 对应的 mask！
+[00:51:17.834968] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_27364_mask_applied.png 对应的 mask！
+[00:51:17.886860] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_3214_mask_applied.png 对应的 mask！
+[00:51:17.916706] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_4258_mask_applied.png 对应的 mask！
+[00:51:17.983178] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_5886_mask_applied.png 对应的 mask！
+[00:51:18.008790] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_7047_mask_applied.png 对应的 mask！
+[00:51:18.040310] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03417042/n03417042_7808_mask_applied.png 对应的 mask！
+[00:51:18.130920] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_12888_mask_applied.png 对应的 mask！
+[00:51:18.134190] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_13004_mask_applied.png 对应的 mask！
+[00:51:18.141329] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_13195_mask_applied.png 对应的 mask！
+[00:51:18.149460] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_13309_mask_applied.png 对应的 mask！
+[00:51:18.277331] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_19145_mask_applied.png 对应的 mask！
+[00:51:18.400691] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_31464_mask_applied.png 对应的 mask！
+[00:51:18.429355] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_7064_mask_applied.png 对应的 mask！
+[00:51:18.453436] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_8557_mask_applied.png 对应的 mask！
+[00:51:18.457136] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_8826_mask_applied.png 对应的 mask！
+[00:51:18.463278] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03425413/n03425413_9236_mask_applied.png 对应的 mask！
+[00:51:18.479959] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00007755_mask_applied.png 对应的 mask！
+[00:51:18.481085] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00011983_mask_applied.png 对应的 mask！
+[00:51:18.482956] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00016748_mask_applied.png 对应的 mask！
+[00:51:18.485521] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00023845_mask_applied.png 对应的 mask！
+[00:51:18.485981] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00024405_mask_applied.png 对应的 mask！
+[00:51:18.488652] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00035419_mask_applied.png 对应的 mask！
+[00:51:18.491174] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00036755_mask_applied.png 对应的 mask！
+[00:51:18.491868] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/ILSVRC2012_val_00038005_mask_applied.png 对应的 mask！
+[00:51:18.495441] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10027_mask_applied.png 对应的 mask！
+[00:51:18.500273] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10167_mask_applied.png 对应的 mask！
+[00:51:18.500673] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10216_mask_applied.png 对应的 mask！
+[00:51:18.501032] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10235_mask_applied.png 对应的 mask！
+[00:51:18.502830] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10376_mask_applied.png 对应的 mask！
+[00:51:18.504249] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10455_mask_applied.png 对应的 mask！
+[00:51:18.504683] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10499_mask_applied.png 对应的 mask！
+[00:51:18.505159] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10514_mask_applied.png 对应的 mask！
+[00:51:18.506740] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10556_mask_applied.png 对应的 mask！
+[00:51:18.510053] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1067_mask_applied.png 对应的 mask！
+[00:51:18.511304] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10689_mask_applied.png 对应的 mask！
+[00:51:18.512334] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10719_mask_applied.png 对应的 mask！
+[00:51:18.514106] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_10759_mask_applied.png 对应的 mask！
+[00:51:18.515993] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_11089_mask_applied.png 对应的 mask！
+[00:51:18.520750] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_11389_mask_applied.png 对应的 mask！
+[00:51:18.525434] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_11789_mask_applied.png 对应的 mask！
+[00:51:18.529514] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_12117_mask_applied.png 对应的 mask！
+[00:51:18.533517] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_12463_mask_applied.png 对应的 mask！
+[00:51:18.538634] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_127_mask_applied.png 对应的 mask！
+[00:51:18.539117] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_12724_mask_applied.png 对应的 mask！
+[00:51:18.540873] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1289_mask_applied.png 对应的 mask！
+[00:51:18.542152] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13067_mask_applied.png 对应的 mask！
+[00:51:18.543285] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13144_mask_applied.png 对应的 mask！
+[00:51:18.543686] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13186_mask_applied.png 对应的 mask！
+[00:51:18.544968] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13307_mask_applied.png 对应的 mask！
+[00:51:18.546840] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13455_mask_applied.png 对应的 mask！
+[00:51:18.547850] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13567_mask_applied.png 对应的 mask！
+[00:51:18.548435] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13576_mask_applied.png 对应的 mask！
+[00:51:18.551255] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13759_mask_applied.png 对应的 mask！
+[00:51:18.551720] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_13783_mask_applied.png 对应的 mask！
+[00:51:18.554651] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1389_mask_applied.png 对应的 mask！
+[00:51:18.558378] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_14457_mask_applied.png 对应的 mask！
+[00:51:18.559902] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_14638_mask_applied.png 对应的 mask！
+[00:51:18.560708] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_14689_mask_applied.png 对应的 mask！
+[00:51:18.561637] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1475_mask_applied.png 对应的 mask！
+[00:51:18.565692] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_15187_mask_applied.png 对应的 mask！
+[00:51:18.572430] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_16036_mask_applied.png 对应的 mask！
+[00:51:18.572888] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_16067_mask_applied.png 对应的 mask！
+[00:51:18.574746] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_16166_mask_applied.png 对应的 mask！
+[00:51:18.575206] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_16186_mask_applied.png 对应的 mask！
+[00:51:18.575622] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_16189_mask_applied.png 对应的 mask！
+[00:51:18.577871] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_16399_mask_applied.png 对应的 mask！
+[00:51:18.582564] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_17157_mask_applied.png 对应的 mask！
+[00:51:18.583858] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_17293_mask_applied.png 对应的 mask！
+[00:51:18.584706] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1746_mask_applied.png 对应的 mask！
+[00:51:18.585651] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_17703_mask_applied.png 对应的 mask！
+[00:51:18.589277] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1809_mask_applied.png 对应的 mask！
+[00:51:18.591912] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_18603_mask_applied.png 对应的 mask！
+[00:51:18.595246] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_189_mask_applied.png 对应的 mask！
+[00:51:18.598604] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_1976_mask_applied.png 对应的 mask！
+[00:51:18.599862] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_19809_mask_applied.png 对应的 mask！
+[00:51:18.608453] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2043_mask_applied.png 对应的 mask！
+[00:51:18.613580] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2086_mask_applied.png 对应的 mask！
+[00:51:18.624027] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2253_mask_applied.png 对应的 mask！
+[00:51:18.625039] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2314_mask_applied.png 对应的 mask！
+[00:51:18.628657] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2405_mask_applied.png 对应的 mask！
+[00:51:18.634388] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2548_mask_applied.png 对应的 mask！
+[00:51:18.637382] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2585_mask_applied.png 对应的 mask！
+[00:51:18.638049] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2605_mask_applied.png 对应的 mask！
+[00:51:18.638436] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2608_mask_applied.png 对应的 mask！
+[00:51:18.646850] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_2963_mask_applied.png 对应的 mask！
+[00:51:18.648702] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_303_mask_applied.png 对应的 mask！
+[00:51:18.649142] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3036_mask_applied.png 对应的 mask！
+[00:51:18.649981] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3046_mask_applied.png 对应的 mask！
+[00:51:18.650745] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3063_mask_applied.png 对应的 mask！
+[00:51:18.651638] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3095_mask_applied.png 对应的 mask！
+[00:51:18.654150] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3168_mask_applied.png 对应的 mask！
+[00:51:18.654630] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3209_mask_applied.png 对应的 mask！
+[00:51:18.658604] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_333_mask_applied.png 对应的 mask！
+[00:51:18.659360] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3356_mask_applied.png 对应的 mask！
+[00:51:18.668666] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3595_mask_applied.png 对应的 mask！
+[00:51:18.680398] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3829_mask_applied.png 对应的 mask！
+[00:51:18.683520] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3895_mask_applied.png 对应的 mask！
+[00:51:18.683867] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3915_mask_applied.png 对应的 mask！
+[00:51:18.684187] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3919_mask_applied.png 对应的 mask！
+[00:51:18.684821] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3928_mask_applied.png 对应的 mask！
+[00:51:18.686175] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_3966_mask_applied.png 对应的 mask！
+[00:51:18.690450] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_398_mask_applied.png 对应的 mask！
+[00:51:18.690780] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_399_mask_applied.png 对应的 mask！
+[00:51:18.692347] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4028_mask_applied.png 对应的 mask！
+[00:51:18.694612] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4089_mask_applied.png 对应的 mask！
+[00:51:18.699074] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4115_mask_applied.png 对应的 mask！
+[00:51:18.699634] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4123_mask_applied.png 对应的 mask！
+[00:51:18.701154] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4158_mask_applied.png 对应的 mask！
+[00:51:18.702107] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4176_mask_applied.png 对应的 mask！
+[00:51:18.713354] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_448_mask_applied.png 对应的 mask！
+[00:51:18.716839] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_455_mask_applied.png 对应的 mask！
+[00:51:18.718709] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4667_mask_applied.png 对应的 mask！
+[00:51:18.725009] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4879_mask_applied.png 对应的 mask！
+[00:51:18.728879] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_4984_mask_applied.png 对应的 mask！
+[00:51:18.729912] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5007_mask_applied.png 对应的 mask！
+[00:51:18.734250] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5026_mask_applied.png 对应的 mask！
+[00:51:18.734677] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5029_mask_applied.png 对应的 mask！
+[00:51:18.735882] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5097_mask_applied.png 对应的 mask！
+[00:51:18.736575] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5114_mask_applied.png 对应的 mask！
+[00:51:18.738525] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5159_mask_applied.png 对应的 mask！
+[00:51:18.745310] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5297_mask_applied.png 对应的 mask！
+[00:51:18.745850] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5305_mask_applied.png 对应的 mask！
+[00:51:18.758001] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5534_mask_applied.png 对应的 mask！
+[00:51:18.758427] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_5546_mask_applied.png 对应的 mask！
+[00:51:18.773303] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_574_mask_applied.png 对应的 mask！
+[00:51:18.804059] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6215_mask_applied.png 对应的 mask！
+[00:51:18.810258] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6347_mask_applied.png 对应的 mask！
+[00:51:18.811466] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6383_mask_applied.png 对应的 mask！
+[00:51:18.812449] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6396_mask_applied.png 对应的 mask！
+[00:51:18.812798] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6397_mask_applied.png 对应的 mask！
+[00:51:18.814903] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6465_mask_applied.png 对应的 mask！
+[00:51:18.816337] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6516_mask_applied.png 对应的 mask！
+[00:51:18.816790] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6534_mask_applied.png 对应的 mask！
+[00:51:18.818639] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6548_mask_applied.png 对应的 mask！
+[00:51:18.819070] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6574_mask_applied.png 对应的 mask！
+[00:51:18.823096] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6644_mask_applied.png 对应的 mask！
+[00:51:18.824852] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6789_mask_applied.png 对应的 mask！
+[00:51:18.825575] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6794_mask_applied.png 对应的 mask！
+[00:51:18.826280] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6809_mask_applied.png 对应的 mask！
+[00:51:18.826705] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6848_mask_applied.png 对应的 mask！
+[00:51:18.827667] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6856_mask_applied.png 对应的 mask！
+[00:51:18.828394] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_6908_mask_applied.png 对应的 mask！
+[00:51:18.831296] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7059_mask_applied.png 对应的 mask！
+[00:51:18.833123] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7146_mask_applied.png 对应的 mask！
+[00:51:18.833543] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7147_mask_applied.png 对应的 mask！
+[00:51:18.836336] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7184_mask_applied.png 对应的 mask！
+[00:51:18.837547] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7228_mask_applied.png 对应的 mask！
+[00:51:18.837877] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_723_mask_applied.png 对应的 mask！
+[00:51:18.838299] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7238_mask_applied.png 对应的 mask！
+[00:51:18.839604] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7277_mask_applied.png 对应的 mask！
+[00:51:18.841191] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7336_mask_applied.png 对应的 mask！
+[00:51:18.842263] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_743_mask_applied.png 对应的 mask！
+[00:51:18.842684] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_748_mask_applied.png 对应的 mask！
+[00:51:18.843712] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_75_mask_applied.png 对应的 mask！
+[00:51:18.844384] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7538_mask_applied.png 对应的 mask！
+[00:51:18.845250] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7563_mask_applied.png 对应的 mask！
+[00:51:18.853112] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7767_mask_applied.png 对应的 mask！
+[00:51:18.856685] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7853_mask_applied.png 对应的 mask！
+[00:51:18.857124] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7855_mask_applied.png 对应的 mask！
+[00:51:18.857844] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_7864_mask_applied.png 对应的 mask！
+[00:51:18.865528] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_806_mask_applied.png 对应的 mask！
+[00:51:18.866344] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8085_mask_applied.png 对应的 mask！
+[00:51:18.870161] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8209_mask_applied.png 对应的 mask！
+[00:51:18.870522] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8215_mask_applied.png 对应的 mask！
+[00:51:18.881797] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8315_mask_applied.png 对应的 mask！
+[00:51:18.883000] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8343_mask_applied.png 对应的 mask！
+[00:51:18.884319] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8403_mask_applied.png 对应的 mask！
+[00:51:18.887006] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8448_mask_applied.png 对应的 mask！
+[00:51:18.887353] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8474_mask_applied.png 对应的 mask！
+[00:51:18.897735] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8718_mask_applied.png 对应的 mask！
+[00:51:18.899587] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8817_mask_applied.png 对应的 mask！
+[00:51:18.900437] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8838_mask_applied.png 对应的 mask！
+[00:51:18.906370] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_8956_mask_applied.png 对应的 mask！
+[00:51:18.911253] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9105_mask_applied.png 对应的 mask！
+[00:51:18.912942] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9157_mask_applied.png 对应的 mask！
+[00:51:18.917644] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9236_mask_applied.png 对应的 mask！
+[00:51:18.918031] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9245_mask_applied.png 对应的 mask！
+[00:51:18.918625] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9255_mask_applied.png 对应的 mask！
+[00:51:18.920062] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9289_mask_applied.png 对应的 mask！
+[00:51:18.932922] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9515_mask_applied.png 对应的 mask！
+[00:51:18.935508] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9746_mask_applied.png 对应的 mask！
+[00:51:18.938272] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9939_mask_applied.png 对应的 mask！
+[00:51:18.938634] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03445777/n03445777_9947_mask_applied.png 对应的 mask！
+[00:51:18.946699] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00002665_mask_applied.png 对应的 mask！
+[00:51:18.955138] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00015689_mask_applied.png 对应的 mask！
+[00:51:18.955498] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00015787_mask_applied.png 对应的 mask！
+[00:51:18.956639] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00017919_mask_applied.png 对应的 mask！
+[00:51:18.957221] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00018509_mask_applied.png 对应的 mask！
+[00:51:18.959910] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00020698_mask_applied.png 对应的 mask！
+[00:51:18.960249] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00022496_mask_applied.png 对应的 mask！
+[00:51:18.960564] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00022638_mask_applied.png 对应的 mask！
+[00:51:18.960872] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00023107_mask_applied.png 对应的 mask！
+[00:51:18.965082] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00039045_mask_applied.png 对应的 mask！
+[00:51:18.965423] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00041706_mask_applied.png 对应的 mask！
+[00:51:18.966518] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/ILSVRC2012_val_00047705_mask_applied.png 对应的 mask！
+[00:51:18.967495] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10037_mask_applied.png 对应的 mask！
+[00:51:18.968567] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10068_mask_applied.png 对应的 mask！
+[00:51:18.972247] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10345_mask_applied.png 对应的 mask！
+[00:51:18.973144] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10476_mask_applied.png 对应的 mask！
+[00:51:18.975652] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10499_mask_applied.png 对应的 mask！
+[00:51:18.977040] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10639_mask_applied.png 对应的 mask！
+[00:51:18.978455] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10708_mask_applied.png 对应的 mask！
+[00:51:18.979535] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_1075_mask_applied.png 对应的 mask！
+[00:51:18.980011] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10775_mask_applied.png 对应的 mask！
+[00:51:18.980459] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10796_mask_applied.png 对应的 mask！
+[00:51:18.980857] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10844_mask_applied.png 对应的 mask！
+[00:51:18.981642] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10916_mask_applied.png 对应的 mask！
+[00:51:18.982091] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10919_mask_applied.png 对应的 mask！
+[00:51:18.983007] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10946_mask_applied.png 对应的 mask！
+[00:51:18.983853] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_10999_mask_applied.png 对应的 mask！
+[00:51:18.984210] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11014_mask_applied.png 对应的 mask！
+[00:51:18.986140] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11237_mask_applied.png 对应的 mask！
+[00:51:18.988586] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11326_mask_applied.png 对应的 mask！
+[00:51:18.989835] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11359_mask_applied.png 对应的 mask！
+[00:51:18.990889] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11387_mask_applied.png 对应的 mask！
+[00:51:18.992581] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11539_mask_applied.png 对应的 mask！
+[00:51:18.993342] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11587_mask_applied.png 对应的 mask！
+[00:51:18.995227] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11697_mask_applied.png 对应的 mask！
+[00:51:18.996067] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_1175_mask_applied.png 对应的 mask！
+[00:51:18.997472] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11759_mask_applied.png 对应的 mask！
+[00:51:19.000990] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11845_mask_applied.png 对应的 mask！
+[00:51:19.001843] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_11886_mask_applied.png 对应的 mask！
+[00:51:19.002765] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12049_mask_applied.png 对应的 mask！
+[00:51:19.003111] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12053_mask_applied.png 对应的 mask！
+[00:51:19.004062] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12088_mask_applied.png 对应的 mask！
+[00:51:19.006435] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12247_mask_applied.png 对应的 mask！
+[00:51:19.006779] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12323_mask_applied.png 对应的 mask！
+[00:51:19.007347] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12349_mask_applied.png 对应的 mask！
+[00:51:19.007690] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12378_mask_applied.png 对应的 mask！
+[00:51:19.008296] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12446_mask_applied.png 对应的 mask！
+[00:51:19.009883] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12628_mask_applied.png 对应的 mask！
+[00:51:19.010658] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12694_mask_applied.png 对应的 mask！
+[00:51:19.011936] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12775_mask_applied.png 对应的 mask！
+[00:51:19.012563] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_128_mask_applied.png 对应的 mask！
+[00:51:19.013753] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_12973_mask_applied.png 对应的 mask！
+[00:51:19.014112] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13016_mask_applied.png 对应的 mask！
+[00:51:19.015351] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13114_mask_applied.png 对应的 mask！
+[00:51:19.015731] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13129_mask_applied.png 对应的 mask！
+[00:51:19.016077] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13175_mask_applied.png 对应的 mask！
+[00:51:19.017260] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13208_mask_applied.png 对应的 mask！
+[00:51:19.017583] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13209_mask_applied.png 对应的 mask！
+[00:51:19.017879] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13224_mask_applied.png 对应的 mask！
+[00:51:19.018200] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13236_mask_applied.png 对应的 mask！
+[00:51:19.018761] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13276_mask_applied.png 对应的 mask！
+[00:51:19.019405] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13285_mask_applied.png 对应的 mask！
+[00:51:19.019741] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13314_mask_applied.png 对应的 mask！
+[00:51:19.020058] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13315_mask_applied.png 对应的 mask！
+[00:51:19.020626] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13476_mask_applied.png 对应的 mask！
+[00:51:19.021804] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13769_mask_applied.png 对应的 mask！
+[00:51:19.023137] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_13896_mask_applied.png 对应的 mask！
+[00:51:19.025209] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_14128_mask_applied.png 对应的 mask！
+[00:51:19.025581] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_14304_mask_applied.png 对应的 mask！
+[00:51:19.025897] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_14368_mask_applied.png 对应的 mask！
+[00:51:19.027242] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_14583_mask_applied.png 对应的 mask！
+[00:51:19.028536] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_14859_mask_applied.png 对应的 mask！
+[00:51:19.029394] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_1496_mask_applied.png 对应的 mask！
+[00:51:19.030295] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15019_mask_applied.png 对应的 mask！
+[00:51:19.030627] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15067_mask_applied.png 对应的 mask！
+[00:51:19.032113] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15299_mask_applied.png 对应的 mask！
+[00:51:19.033278] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15486_mask_applied.png 对应的 mask！
+[00:51:19.036650] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15826_mask_applied.png 对应的 mask！
+[00:51:19.037264] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15914_mask_applied.png 对应的 mask！
+[00:51:19.037842] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_15946_mask_applied.png 对应的 mask！
+[00:51:19.038521] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16077_mask_applied.png 对应的 mask！
+[00:51:19.038964] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_1608_mask_applied.png 对应的 mask！
+[00:51:19.039446] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16173_mask_applied.png 对应的 mask！
+[00:51:19.041669] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16315_mask_applied.png 对应的 mask！
+[00:51:19.043127] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16419_mask_applied.png 对应的 mask！
+[00:51:19.046591] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16673_mask_applied.png 对应的 mask！
+[00:51:19.047361] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_1675_mask_applied.png 对应的 mask！
+[00:51:19.049873] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16765_mask_applied.png 对应的 mask！
+[00:51:19.050385] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_16778_mask_applied.png 对应的 mask！
+[00:51:19.051915] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17004_mask_applied.png 对应的 mask！
+[00:51:19.052761] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17063_mask_applied.png 对应的 mask！
+[00:51:19.053984] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17175_mask_applied.png 对应的 mask！
+[00:51:19.056013] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17387_mask_applied.png 对应的 mask！
+[00:51:19.056362] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17424_mask_applied.png 对应的 mask！
+[00:51:19.057135] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17565_mask_applied.png 对应的 mask！
+[00:51:19.057768] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17619_mask_applied.png 对应的 mask！
+[00:51:19.061343] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17703_mask_applied.png 对应的 mask！
+[00:51:19.061997] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17727_mask_applied.png 对应的 mask！
+[00:51:19.062308] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17783_mask_applied.png 对应的 mask！
+[00:51:19.064606] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_17999_mask_applied.png 对应的 mask！
+[00:51:19.065563] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18055_mask_applied.png 对应的 mask！
+[00:51:19.066438] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18096_mask_applied.png 对应的 mask！
+[00:51:19.066760] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18105_mask_applied.png 对应的 mask！
+[00:51:19.067699] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18208_mask_applied.png 对应的 mask！
+[00:51:19.070145] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18664_mask_applied.png 对应的 mask！
+[00:51:19.070477] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18687_mask_applied.png 对应的 mask！
+[00:51:19.071083] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18725_mask_applied.png 对应的 mask！
+[00:51:19.072373] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18898_mask_applied.png 对应的 mask！
+[00:51:19.073351] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_18956_mask_applied.png 对应的 mask！
+[00:51:19.076328] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_19139_mask_applied.png 对应的 mask！
+[00:51:19.078446] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_19499_mask_applied.png 对应的 mask！
+[00:51:19.078759] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_19648_mask_applied.png 对应的 mask！
+[00:51:19.079068] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_19707_mask_applied.png 对应的 mask！
+[00:51:19.084730] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20124_mask_applied.png 对应的 mask！
+[00:51:19.085087] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20148_mask_applied.png 对应的 mask！
+[00:51:19.085848] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20245_mask_applied.png 对应的 mask！
+[00:51:19.086181] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20324_mask_applied.png 对应的 mask！
+[00:51:19.086492] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_2033_mask_applied.png 对应的 mask！
+[00:51:19.086845] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20344_mask_applied.png 对应的 mask！
+[00:51:19.087837] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20397_mask_applied.png 对应的 mask！
+[00:51:19.088442] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20436_mask_applied.png 对应的 mask！
+[00:51:19.091239] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20473_mask_applied.png 对应的 mask！
+[00:51:19.092471] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20649_mask_applied.png 对应的 mask！
+[00:51:19.092811] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20654_mask_applied.png 对应的 mask！
+[00:51:19.094174] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20717_mask_applied.png 对应的 mask！
+[00:51:19.094894] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20903_mask_applied.png 对应的 mask！
+[00:51:19.099640] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_20989_mask_applied.png 对应的 mask！
+[00:51:19.099975] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_21027_mask_applied.png 对应的 mask！
+[00:51:19.107640] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_21227_mask_applied.png 对应的 mask！
+[00:51:19.108616] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_21265_mask_applied.png 对应的 mask！
+[00:51:19.108930] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_21298_mask_applied.png 对应的 mask！
+[00:51:19.109254] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_21346_mask_applied.png 对应的 mask！
+[00:51:19.109562] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_21399_mask_applied.png 对应的 mask！
+[00:51:19.116668] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22018_mask_applied.png 对应的 mask！
+[00:51:19.118459] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22115_mask_applied.png 对应的 mask！
+[00:51:19.118782] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22146_mask_applied.png 对应的 mask！
+[00:51:19.119096] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22147_mask_applied.png 对应的 mask！
+[00:51:19.120067] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22484_mask_applied.png 对应的 mask！
+[00:51:19.121278] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22668_mask_applied.png 对应的 mask！
+[00:51:19.126196] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22893_mask_applied.png 对应的 mask！
+[00:51:19.126542] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_22926_mask_applied.png 对应的 mask！
+[00:51:19.128622] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23069_mask_applied.png 对应的 mask！
+[00:51:19.133172] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_2327_mask_applied.png 对应的 mask！
+[00:51:19.135320] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23706_mask_applied.png 对应的 mask！
+[00:51:19.135662] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23723_mask_applied.png 对应的 mask！
+[00:51:19.135968] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23776_mask_applied.png 对应的 mask！
+[00:51:19.136282] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23815_mask_applied.png 对应的 mask！
+[00:51:19.136613] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23863_mask_applied.png 对应的 mask！
+[00:51:19.138328] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_23946_mask_applied.png 对应的 mask！
+[00:51:19.138807] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_24024_mask_applied.png 对应的 mask！
+[00:51:19.139716] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_24043_mask_applied.png 对应的 mask！
+[00:51:19.141469] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_24216_mask_applied.png 对应的 mask！
+[00:51:19.141815] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_24295_mask_applied.png 对应的 mask！
+[00:51:19.144286] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_24804_mask_applied.png 对应的 mask！
+[00:51:19.147100] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_25224_mask_applied.png 对应的 mask！
+[00:51:19.147543] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_2539_mask_applied.png 对应的 mask！
+[00:51:19.149169] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_25644_mask_applied.png 对应的 mask！
+[00:51:19.149649] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_25687_mask_applied.png 对应的 mask！
+[00:51:19.151112] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_25803_mask_applied.png 对应的 mask！
+[00:51:19.151529] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_26127_mask_applied.png 对应的 mask！
+[00:51:19.152214] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_26228_mask_applied.png 对应的 mask！
+[00:51:19.154113] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_27333_mask_applied.png 对应的 mask！
+[00:51:19.154769] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_27343_mask_applied.png 对应的 mask！
+[00:51:19.156595] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_27983_mask_applied.png 对应的 mask！
+[00:51:19.156942] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_27996_mask_applied.png 对应的 mask！
+[00:51:19.157642] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_28228_mask_applied.png 对应的 mask！
+[00:51:19.159188] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_28267_mask_applied.png 对应的 mask！
+[00:51:19.160362] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_28515_mask_applied.png 对应的 mask！
+[00:51:19.160694] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_28525_mask_applied.png 对应的 mask！
+[00:51:19.161080] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_28569_mask_applied.png 对应的 mask！
+[00:51:19.161630] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_28669_mask_applied.png 对应的 mask！
+[00:51:19.165222] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_29459_mask_applied.png 对应的 mask！
+[00:51:19.166025] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_29555_mask_applied.png 对应的 mask！
+[00:51:19.168791] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30008_mask_applied.png 对应的 mask！
+[00:51:19.169526] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30127_mask_applied.png 对应的 mask！
+[00:51:19.171180] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30243_mask_applied.png 对应的 mask！
+[00:51:19.175251] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30435_mask_applied.png 对应的 mask！
+[00:51:19.175715] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3047_mask_applied.png 对应的 mask！
+[00:51:19.177023] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30668_mask_applied.png 对应的 mask！
+[00:51:19.177455] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30683_mask_applied.png 对应的 mask！
+[00:51:19.177839] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30723_mask_applied.png 对应的 mask！
+[00:51:19.179270] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_30829_mask_applied.png 对应的 mask！
+[00:51:19.181182] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3093_mask_applied.png 对应的 mask！
+[00:51:19.182239] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_31075_mask_applied.png 对应的 mask！
+[00:51:19.185614] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_31624_mask_applied.png 对应的 mask！
+[00:51:19.186615] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_31784_mask_applied.png 对应的 mask！
+[00:51:19.187880] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_31974_mask_applied.png 对应的 mask！
+[00:51:19.188329] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_31987_mask_applied.png 对应的 mask！
+[00:51:19.189352] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32247_mask_applied.png 对应的 mask！
+[00:51:19.189775] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32339_mask_applied.png 对应的 mask！
+[00:51:19.191253] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32464_mask_applied.png 对应的 mask！
+[00:51:19.191696] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32518_mask_applied.png 对应的 mask！
+[00:51:19.192105] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32608_mask_applied.png 对应的 mask！
+[00:51:19.192552] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32684_mask_applied.png 对应的 mask！
+[00:51:19.193024] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32703_mask_applied.png 对应的 mask！
+[00:51:19.193470] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_32725_mask_applied.png 对应的 mask！
+[00:51:19.193912] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_33204_mask_applied.png 对应的 mask！
+[00:51:19.195736] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_33587_mask_applied.png 对应的 mask！
+[00:51:19.199678] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_33668_mask_applied.png 对应的 mask！
+[00:51:19.201964] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3387_mask_applied.png 对应的 mask！
+[00:51:19.210212] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34169_mask_applied.png 对应的 mask！
+[00:51:19.212731] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34536_mask_applied.png 对应的 mask！
+[00:51:19.213211] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34606_mask_applied.png 对应的 mask！
+[00:51:19.214633] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34639_mask_applied.png 对应的 mask！
+[00:51:19.215038] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34666_mask_applied.png 对应的 mask！
+[00:51:19.215490] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34737_mask_applied.png 对应的 mask！
+[00:51:19.221059] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_34994_mask_applied.png 对应的 mask！
+[00:51:19.230290] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_35223_mask_applied.png 对应的 mask！
+[00:51:19.230650] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_35407_mask_applied.png 对应的 mask！
+[00:51:19.232149] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_35764_mask_applied.png 对应的 mask！
+[00:51:19.232957] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_35859_mask_applied.png 对应的 mask！
+[00:51:19.233378] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3595_mask_applied.png 对应的 mask！
+[00:51:19.233800] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_35969_mask_applied.png 对应的 mask！
+[00:51:19.234252] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_36028_mask_applied.png 对应的 mask！
+[00:51:19.234608] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3607_mask_applied.png 对应的 mask！
+[00:51:19.236050] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_36129_mask_applied.png 对应的 mask！
+[00:51:19.236390] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_36265_mask_applied.png 对应的 mask！
+[00:51:19.243006] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_36463_mask_applied.png 对应的 mask！
+[00:51:19.246879] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_36506_mask_applied.png 对应的 mask！
+[00:51:19.248957] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_36686_mask_applied.png 对应的 mask！
+[00:51:19.249304] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3669_mask_applied.png 对应的 mask！
+[00:51:19.251253] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_37009_mask_applied.png 对应的 mask！
+[00:51:19.257522] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_37586_mask_applied.png 对应的 mask！
+[00:51:19.258112] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_37776_mask_applied.png 对应的 mask！
+[00:51:19.259197] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3797_mask_applied.png 对应的 mask！
+[00:51:19.260577] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_383_mask_applied.png 对应的 mask！
+[00:51:19.262261] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_38438_mask_applied.png 对应的 mask！
+[00:51:19.262619] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_38516_mask_applied.png 对应的 mask！
+[00:51:19.264911] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_38685_mask_applied.png 对应的 mask！
+[00:51:19.265243] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_38709_mask_applied.png 对应的 mask！
+[00:51:19.265938] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_3875_mask_applied.png 对应的 mask！
+[00:51:19.266680] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_38929_mask_applied.png 对应的 mask！
+[00:51:19.267018] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_39034_mask_applied.png 对应的 mask！
+[00:51:19.268343] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_39407_mask_applied.png 对应的 mask！
+[00:51:19.268667] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_39543_mask_applied.png 对应的 mask！
+[00:51:19.268980] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_39575_mask_applied.png 对应的 mask！
+[00:51:19.271153] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_40359_mask_applied.png 对应的 mask！
+[00:51:19.272009] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4097_mask_applied.png 对应的 mask！
+[00:51:19.273268] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4117_mask_applied.png 对应的 mask！
+[00:51:19.273810] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_41295_mask_applied.png 对应的 mask！
+[00:51:19.275329] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4154_mask_applied.png 对应的 mask！
+[00:51:19.275970] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_41648_mask_applied.png 对应的 mask！
+[00:51:19.276558] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_42083_mask_applied.png 对应的 mask！
+[00:51:19.277630] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4239_mask_applied.png 对应的 mask！
+[00:51:19.278093] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_42405_mask_applied.png 对应的 mask！
+[00:51:19.281005] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_42788_mask_applied.png 对应的 mask！
+[00:51:19.283908] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_43086_mask_applied.png 对应的 mask！
+[00:51:19.285054] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4323_mask_applied.png 对应的 mask！
+[00:51:19.287167] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_43605_mask_applied.png 对应的 mask！
+[00:51:19.287520] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_43663_mask_applied.png 对应的 mask！
+[00:51:19.287834] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_43813_mask_applied.png 对应的 mask！
+[00:51:19.288163] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_43839_mask_applied.png 对应的 mask！
+[00:51:19.288474] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4403_mask_applied.png 对应的 mask！
+[00:51:19.288781] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_44074_mask_applied.png 对应的 mask！
+[00:51:19.291334] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_44916_mask_applied.png 对应的 mask！
+[00:51:19.292183] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_45277_mask_applied.png 对应的 mask！
+[00:51:19.292499] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_45287_mask_applied.png 对应的 mask！
+[00:51:19.292795] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4553_mask_applied.png 对应的 mask！
+[00:51:19.293113] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_45616_mask_applied.png 对应的 mask！
+[00:51:19.296220] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_46696_mask_applied.png 对应的 mask！
+[00:51:19.297569] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_46884_mask_applied.png 对应的 mask！
+[00:51:19.297898] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_46943_mask_applied.png 对应的 mask！
+[00:51:19.301025] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_47879_mask_applied.png 对应的 mask！
+[00:51:19.301853] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_48085_mask_applied.png 对应的 mask！
+[00:51:19.305207] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_48126_mask_applied.png 对应的 mask！
+[00:51:19.311830] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_49667_mask_applied.png 对应的 mask！
+[00:51:19.312183] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_49674_mask_applied.png 对应的 mask！
+[00:51:19.312487] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_4988_mask_applied.png 对应的 mask！
+[00:51:19.313269] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_50106_mask_applied.png 对应的 mask！
+[00:51:19.313600] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_50108_mask_applied.png 对应的 mask！
+[00:51:19.314008] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_50367_mask_applied.png 对应的 mask！
+[00:51:19.315230] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_51188_mask_applied.png 对应的 mask！
+[00:51:19.317252] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_52194_mask_applied.png 对应的 mask！
+[00:51:19.320943] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_53003_mask_applied.png 对应的 mask！
+[00:51:19.321388] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_53087_mask_applied.png 对应的 mask！
+[00:51:19.323534] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_5388_mask_applied.png 对应的 mask！
+[00:51:19.323999] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_5404_mask_applied.png 对应的 mask！
+[00:51:19.324719] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_54295_mask_applied.png 对应的 mask！
+[00:51:19.325227] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_54363_mask_applied.png 对应的 mask！
+[00:51:19.325668] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_548_mask_applied.png 对应的 mask！
+[00:51:19.326476] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_55348_mask_applied.png 对应的 mask！
+[00:51:19.331351] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_5599_mask_applied.png 对应的 mask！
+[00:51:19.331703] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_56078_mask_applied.png 对应的 mask！
+[00:51:19.333491] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_5639_mask_applied.png 对应的 mask！
+[00:51:19.333820] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_5653_mask_applied.png 对应的 mask！
+[00:51:19.337638] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_5893_mask_applied.png 对应的 mask！
+[00:51:19.340204] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_59754_mask_applied.png 对应的 mask！
+[00:51:19.340531] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_59985_mask_applied.png 对应的 mask！
+[00:51:19.342293] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6076_mask_applied.png 对应的 mask！
+[00:51:19.342857] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6106_mask_applied.png 对应的 mask！
+[00:51:19.344410] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6159_mask_applied.png 对应的 mask！
+[00:51:19.344746] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_61633_mask_applied.png 对应的 mask！
+[00:51:19.346879] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_62814_mask_applied.png 对应的 mask！
+[00:51:19.348283] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6326_mask_applied.png 对应的 mask！
+[00:51:19.349930] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6358_mask_applied.png 对应的 mask！
+[00:51:19.350535] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_63675_mask_applied.png 对应的 mask！
+[00:51:19.351457] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_63966_mask_applied.png 对应的 mask！
+[00:51:19.352028] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6417_mask_applied.png 对应的 mask！
+[00:51:19.353383] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6503_mask_applied.png 对应的 mask！
+[00:51:19.353692] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6516_mask_applied.png 对应的 mask！
+[00:51:19.355162] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_65828_mask_applied.png 对应的 mask！
+[00:51:19.358198] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_66927_mask_applied.png 对应的 mask！
+[00:51:19.358520] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_66969_mask_applied.png 对应的 mask！
+[00:51:19.358823] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_66987_mask_applied.png 对应的 mask！
+[00:51:19.359643] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_6749_mask_applied.png 对应的 mask！
+[00:51:19.361093] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_68027_mask_applied.png 对应的 mask！
+[00:51:19.361718] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_68897_mask_applied.png 对应的 mask！
+[00:51:19.362651] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_69263_mask_applied.png 对应的 mask！
+[00:51:19.364051] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7046_mask_applied.png 对应的 mask！
+[00:51:19.365835] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_71113_mask_applied.png 对应的 mask！
+[00:51:19.366617] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_71256_mask_applied.png 对应的 mask！
+[00:51:19.374638] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_71988_mask_applied.png 对应的 mask！
+[00:51:19.374994] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7199_mask_applied.png 对应的 mask！
+[00:51:19.376114] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_72509_mask_applied.png 对应的 mask！
+[00:51:19.376814] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_73_mask_applied.png 对应的 mask！
+[00:51:19.380166] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_74308_mask_applied.png 对应的 mask！
+[00:51:19.380513] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7447_mask_applied.png 对应的 mask！
+[00:51:19.381277] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_74823_mask_applied.png 对应的 mask！
+[00:51:19.381597] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_74946_mask_applied.png 对应的 mask！
+[00:51:19.381903] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7526_mask_applied.png 对应的 mask！
+[00:51:19.383659] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7637_mask_applied.png 对应的 mask！
+[00:51:19.383986] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7766_mask_applied.png 对应的 mask！
+[00:51:19.384293] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7793_mask_applied.png 对应的 mask！
+[00:51:19.384595] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_78_mask_applied.png 对应的 mask！
+[00:51:19.387610] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_79004_mask_applied.png 对应的 mask！
+[00:51:19.388677] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_7954_mask_applied.png 对应的 mask！
+[00:51:19.398520] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_8334_mask_applied.png 对应的 mask！
+[00:51:19.398966] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_8338_mask_applied.png 对应的 mask！
+[00:51:19.401395] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_8498_mask_applied.png 对应的 mask！
+[00:51:19.404831] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_8936_mask_applied.png 对应的 mask！
+[00:51:19.405777] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_904_mask_applied.png 对应的 mask！
+[00:51:19.406477] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9066_mask_applied.png 对应的 mask！
+[00:51:19.406939] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9155_mask_applied.png 对应的 mask！
+[00:51:19.412580] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9444_mask_applied.png 对应的 mask！
+[00:51:19.412998] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9449_mask_applied.png 对应的 mask！
+[00:51:19.413808] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9458_mask_applied.png 对应的 mask！
+[00:51:19.415258] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9529_mask_applied.png 对应的 mask！
+[00:51:19.416088] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9609_mask_applied.png 对应的 mask！
+[00:51:19.418890] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9839_mask_applied.png 对应的 mask！
+[00:51:19.419995] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9864_mask_applied.png 对应的 mask！
+[00:51:19.421003] ⚠️ 警告: 未找到 /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask/masks_applied/n03888257/n03888257_9983_mask_applied.png 对应的 mask！
+[00:51:19.421652] ✅ 加载 8621 张图片和 8621 张 mask
+[00:51:19.422090] 📌 训练数据集大小: 8621
+[00:51:19.422481] Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x78c2c44fa7d0>
+[00:51:22.906944] Model = MaskedAutoencoderViT(
+  (patch_embed): PatchEmbed(
+    (proj): Conv2d(3, 1024, kernel_size=(16, 16), stride=(16, 16))
+  )
+  (blocks): ModuleList(
+    (0-23): 24 x Block(
+      (norm1): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=1024, out_features=3072, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=1024, out_features=1024, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (norm): LayerNorm((1024,), eps=1e-06, elementwise_affine=True)
+  (decoder_embed): Linear(in_features=1024, out_features=512, bias=True)
+  (decoder_blocks): ModuleList(
+    (0-7): 8 x Block(
+      (norm1): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (attn): Attention(
+        (qkv): Linear(in_features=512, out_features=1536, bias=True)
+        (attn_drop): Dropout(p=0.0, inplace=False)
+        (proj): Linear(in_features=512, out_features=512, bias=True)
+        (proj_drop): Dropout(p=0.0, inplace=False)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+      (mlp): Mlp(
+        (fc1): Linear(in_features=512, out_features=2048, bias=True)
+        (act): GELU(approximate='none')
+        (fc2): Linear(in_features=2048, out_features=512, bias=True)
+        (drop): Dropout(p=0.0, inplace=False)
+      )
+    )
+  )
+  (decoder_norm): LayerNorm((512,), eps=1e-06, elementwise_affine=True)
+  (decoder_pred): Linear(in_features=512, out_features=768, bias=True)
+)
+[00:51:22.907332] base lr: 1.00e-03
+[00:51:22.907419] actual lr: 1.00e-03
+[00:51:22.907502] accumulate grad iterations: 1
+[00:51:22.907602] effective batch size: 256
+[00:51:22.920871] AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0.0
+
+Parameter Group 1
+    amsgrad: False
+    betas: (0.9, 0.95)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.001
+    maximize: False
+    weight_decay: 0.05
+)
+[00:51:22.924664] Start training for 600 epochs
+[00:51:22.926057] log_dir: output_dir3
+[00:51:31.835529] 📌 mask_path: tensor([[[-2.1179, -2.1179, -2.1179,  ..., -2.1179, -2.1179, -2.1179],
+         [-2.1179, -2.1179, -2.1179,  ..., -2.1179, -2.1179, -2.1179],
+         [-2.1179, -2.1179, -2.1179,  ..., -2.1179, -2.1179, -2.1179],
+         ...,
+         [-2.1179, -2.1179, -2.1179,  ..., -2.1179, -2.1179, -2.1179],
+         [-2.1179, -2.1179, -2.1179,  ..., -2.1179, -2.1179, -2.1179],
+         [-2.1179, -2.1179, -2.1179,  ..., -2.1179, -2.1179, -2.1179]],
+
+        [[-2.0357, -2.0357, -2.0357,  ..., -2.0357, -2.0357, -2.0357],
+         [-2.0357, -2.0357, -2.0357,  ..., -2.0357, -2.0357, -2.0357],
+         [-2.0357, -2.0357, -2.0357,  ..., -2.0357, -2.0357, -2.0357],
+         ...,
+         [-2.0357, -2.0357, -2.0357,  ..., -2.0357, -2.0357, -2.0357],
+         [-2.0357, -2.0357, -2.0357,  ..., -2.0357, -2.0357, -2.0357],
+         [-2.0357, -2.0357, -2.0357,  ..., -2.0357, -2.0357, -2.0357]],
+
+        [[-1.8044, -1.8044, -1.8044,  ..., -1.8044, -1.8044, -1.8044],
+         [-1.8044, -1.8044, -1.8044,  ..., -1.8044, -1.8044, -1.8044],
+         [-1.8044, -1.8044, -1.8044,  ..., -1.8044, -1.8044, -1.8044],
+         ...,
+         [-1.8044, -1.8044, -1.8044,  ..., -1.8044, -1.8044, -1.8044],
+         [-1.8044, -1.8044, -1.8044,  ..., -1.8044, -1.8044, -1.8044],
+         [-1.8044, -1.8044, -1.8044,  ..., -1.8044, -1.8044, -1.8044]]],
+       device='cuda:0'), type: <class 'torch.Tensor'>
+[00:51:36.874352] [00:51:36.875234] [00:51:36.875494] [00:51:36.875700] [00:51:36.875861] [00:51:36.877285] [00:51:36.877554] [00:51:36.877716] [00:51:36.877862] [00:51:36.878018] [00:51:36.878159] [00:51:36.878292] [00:51:36.878423] [00:51:36.878554] [00:51:36.878700] [00:51:36.878835] [00:51:36.878976] [00:51:36.879108] [00:51:36.879234] [00:51:36.879379] [00:51:36.921966] [00:51:36.922877] [00:51:36.923150] [00:51:36.923326] [00:51:36.923523] [00:51:36.923699] [00:51:36.923857] [00:51:36.924164] [00:51:36.924341] [00:51:36.924502] [1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mMAE_imagenette_bs256_epoch600_withevaluate[0m at: [34mhttps://wandb.ai/visual-intelligence-laboratory/MInM/runs/atp8355n[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250224_005113-atp8355n/logs[0m
