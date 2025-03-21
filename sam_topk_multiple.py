@@ -5,9 +5,9 @@ import shutil
 from collections import Counter
 
 def load_segmentation_image(image_path):
-    """加载分割图像并调整为 224*224，并返回 RGB 格式数据"""
+    """加载分割图像并调整为 224x224，并返回 RGB 格式数据"""
     image = cv2.imread(image_path)  # OpenCV 默认是 BGR
-    image = cv2.resize(image, (224, 224))  # 统一缩放到 256x256
+    image = cv2.resize(image, (224, 224))  # 统一缩放到 224x224
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # 转换为 RGB
     return image_rgb
 
@@ -71,15 +71,15 @@ def mask_patches(segmentation_image, selected_instances, patch_size=16):
 
 
 def apply_mask_to_original(original_image_path, mask, log_file):
-    """调整原始图像尺寸为 256x256，并基于 Patch mask 进行遮挡"""
+    """调整原始图像尺寸为 224x224，并基于 Patch mask 进行遮挡"""
     original_image = cv2.imread(original_image_path)
 
     if original_image is None:
         log_file.write(f"无法加载原始图像: {original_image_path}\n")
         return None
 
-    original_image = cv2.resize(original_image, (256, 256))
-    mask = cv2.resize(mask, (256, 256), interpolation=cv2.INTER_NEAREST)
+    original_image = cv2.resize(original_image, (224, 224))
+    mask = cv2.resize(mask, (224, 224), interpolation=cv2.INTER_NEAREST)
 
     if np.all(mask == 0):
         log_file.write(f"Mask 全黑: {original_image_path}\n")

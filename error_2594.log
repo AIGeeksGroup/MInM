@@ -1,7 +1,0 @@
-/var/spool/slurmd/job02594/slurm_script: line 16: /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh: No such file or directory
-/var/spool/slurmd/job02594/slurm_script: line 17: /home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda: No such file or directory
-
-CondaError: Run 'conda init' before 'conda activate'
-
-/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/main_MAEpic.py:13: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
-  image = torch.clip((image * imagenet_std + imagenet_mean) * 255, 0, 255).int().numpy()

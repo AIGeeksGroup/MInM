@@ -23,7 +23,8 @@ conda activate gpupytorch
 export MASTER_ADDR="localhost"
 export MASTER_PORT="29500"
 
-# 运行train1.py
-torchrun trainwandb6.py
+#python vit_to_mmdet.py /path/to/vit.pth /path/to/mmdet_vit.pth
 
+cd ~/PycharmProjects/mmdetection
 
+python tools/train.py configs/mask_rcnn/mask-rcnn_vit_fpn.py

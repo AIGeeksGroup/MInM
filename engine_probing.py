@@ -45,7 +45,7 @@ def get_args_parser():
                         help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
     
     # Model parameters
-    parser.add_argument('--model', default='vit_large_patch16', type=str, metavar='MODEL',
+    parser.add_argument('--model', default='vit_base_patch16', type=str, metavar='MODEL',
                         help='Name of model to train')
 
     # Optimizer parameters
@@ -69,9 +69,9 @@ def get_args_parser():
                         help='Use class token instead of global pool for classification')
 
     # Dataset parameters
-    parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/val', type=str,
+    parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/data/in1k/imagenet1k_linear_probe', type=str,
                         help='dataset path')
-    parser.add_argument('--nb_classes', default=10, type=int,
+    parser.add_argument('--nb_classes', default=1000, type=int,
                         help='number of the classification types')
 
     parser.add_argument('--output_dir', default='./output_dir2',

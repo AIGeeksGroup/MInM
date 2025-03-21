@@ -22,6 +22,6 @@ export MASTER_PORT="29500"
 python -c "import torch; print(torch.__version__); print(torch.version.cuda); print(torch.backends.cudnn.version())"
 
 # 运行train1.py
-python trainwandb8.py
+python sam_topk_multiple.py
 
 

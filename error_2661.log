@@ -1,24 +1,0 @@
-/var/spool/slurmd/job02661/slurm_script: line 16: /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh: No such file or directory
-/var/spool/slurmd/job02661/slurm_script: line 17: /home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda: No such file or directory
-
-CondaError: Run 'conda init' before 'conda activate'
-
-wandb: Currently logged in as: ytia0661 (ytia0661-the-university-of-sydney). Use `wandb login --relogin` to force relogin
-wandb: Appending key for api.wandb.ai to your netrc file: /home/ytia0661@acfr.usyd.edu.au/.netrc
-wandb: Currently logged in as: ytia0661 (visual-intelligence-laboratory). Use `wandb login --relogin` to force relogin
-wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
-wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: Tracking run with wandb version 0.19.2
-wandb: Run data is saved locally in /home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/wandb/run-20250221_163926-pu9lyrkl
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run MAE_imagenette_bs256_epoch400_noevaluate_sam
-wandb: ⭐️ View project at https://wandb.ai/visual-intelligence-laboratory/MInM
-wandb: 🚀 View run at https://wandb.ai/visual-intelligence-laboratory/MInM/runs/pu9lyrkl
-Traceback (most recent call last):
-  File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb7.py", line 309, in <module>
-    main(args)
-  File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/trainwandb7.py", line 161, in main
-    misc.init_distributed_mode(args)
-  File "/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/MAE/mae/util/misc.py", line 236, in init_distributed_mode
-    args.gpu = args.rank % torch.cuda.device_count()
-               ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
-ZeroDivisionError: integer modulo by zero

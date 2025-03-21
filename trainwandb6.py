@@ -52,7 +52,7 @@ def get_args_parser():
                         help='Accumulate gradient iterations (for increasing the effective batch size under memory constraints)')
 
     # Model parameters
-    parser.add_argument('--model', default='mae_vit_large_patch16', type=str, metavar='MODEL',
+    parser.add_argument('--model', default='mae_vit_base_patch16', type=str, metavar='MODEL',
                         help='Name of model to train')
     parser.add_argument('--input_size', default=224, type=int,
                         help='images input size')
@@ -77,9 +77,9 @@ def get_args_parser():
     # Dataset parameters
     parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette', type=str,
                         help='dataset path')
-    parser.add_argument('--output_dir', default='output_dir6',
+    parser.add_argument('--output_dir', default='output_dir8',
                         help='path where to save, empty for no saving')
-    parser.add_argument('--log_dir', default='output_dir6',
+    parser.add_argument('--log_dir', default='output_dir8',
                         help='path where to tensorboard log')
     parser.add_argument('--device', default='cuda',
                         help='device to use for training / testing')
@@ -218,7 +218,7 @@ def main(args):
                             loss_scaler=loss_scaler, epoch=epoch, name="temporary.pth"
                         )
             if misc.is_main_process():
-                current_acc1, current_acc5 = linear_probing("./output_dir6/temporary.pth", args)
+                current_acc1, current_acc5 = linear_probing("./output_dir8/temporary.pth", args)
                 print(f"Current best accuracy after linear probing: {current_acc1:.2f}%")
                 wandb.log({'best_acc1': current_acc1})
                 wandb.log({'best_acc5': current_acc5})
@@ -256,4 +256,3 @@ if __name__ == '__main__':
     if args.output_dir:
         Path(args.output_dir).mkdir(parents=True, exist_ok=True)
     main(args)
-
