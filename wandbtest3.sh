@@ -10,18 +10,15 @@
 
 # 进入你的项目目录
 cd $SLURM_SUBMIT_DIR
+nvidia-smi
 
-# 激活anaconda环境
-conda init
-source /home/ytia0661@acfr.usyd.edu.au/miniconda3/etc/profile.d/conda.sh
-eval "$(/home/ytia0661@acfr.usyd.edu.au/miniconda3/bin/conda shell.bash hook)"
-
-# 激活gpupytorch环境
-conda init
+# 替换为你的 anaconda3 路径
+source /home/ytia0661@acfr.usyd.edu.au/anaconda3/etc/profile.d/conda.sh
 conda activate gpupytorch
 
+nvidia-smi
 export MASTER_ADDR="localhost"
-export MASTER_PORT="29500"
+export MASTER_PORT="29501"
 
-python trainwandb9.py
+python imagenet_1kminm.py
 

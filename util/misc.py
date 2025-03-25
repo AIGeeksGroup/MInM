@@ -248,7 +248,7 @@ def init_distributed_mode(args):
         args.rank, args.dist_url, args.gpu), flush=True)
     torch.distributed.init_process_group(backend=args.dist_backend, init_method=args.dist_url,
                                          world_size=args.world_size, rank=args.rank, timeout=datetime.timedelta(hours=2))
-    torch.distributed.barrier()
+    # torch.distributed.barrier()
     setup_for_distributed(args.rank == 0)
 
 def destroy_distributed_mode():

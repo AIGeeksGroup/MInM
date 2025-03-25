@@ -17,7 +17,8 @@ import torch.nn as nn
 from timm.models.vision_transformer import PatchEmbed, Block
 
 from util.pos_embed import get_2d_sincos_pos_embed
-
+from PIL import Image
+import torchvision.transforms as transforms
 
 class MaskedAutoencoderViT(nn.Module):
     """ Masked Autoencoder with VisionTransformer backbone
@@ -61,6 +62,45 @@ class MaskedAutoencoderViT(nn.Module):
         self.norm_pix_loss = norm_pix_loss
 
         self.initialize_weights()
+
+    def load_local_mask(self, mask_path, patch_size, img_size=224, device="cuda"):
+        """
+        从本地 `mask_path` 读取 Mask，并转换为 Patch 级别的 Mask。
+
+        参数:
+        - mask_path: mask 文件路径
+        - patch_size: patch 大小 (通常是 16 或 14)
+        - img_size: 输入图像大小 (通常是 224x224)
+        - device: 运行设备 (默认 "cuda")
+
+        返回:
+        - mask: [L] 形状的 0/1 mask (1 表示 masked, 0 表示 keep)
+        - ids_restore: [L] 形状的恢复索引
+        """
+        # 读取 Mask 图像并转换为 Tensor
+        mask = Image.open(mask_path).convert("L")  # 转换为灰度图
+        mask = transforms.ToTensor()(mask).to(device)  # 转换为 PyTorch Tensor
+        mask = (mask > 0.5).float()  # 二值化，确保 mask 只有 0 和 1
+        mask = mask.squeeze(0)  # 去除通道维度, 变成 [H, W]
+
+        # 确保 mask 尺寸和 img_size 一致
+        assert mask.shape[0] == img_size and mask.shape[1] == img_size, \
+            f"Mask 尺寸错误: 需要 {img_size}x{img_size}, 但得到 {mask.shape}"
+
+        # 计算 mask 需要转换成的 patch 数量
+        num_patches = img_size // patch_size
+        assert img_size % patch_size == 0, f"img_size ({img_size}) 必须是 patch_size ({patch_size}) 的整数倍"
+
+        # 重新调整 Mask，使其符合 Patch 大小
+        mask = mask.view(num_patches, patch_size, num_patches, patch_size)  # 分割成 Patch
+        mask = mask.permute(0, 2, 1, 3).contiguous()  # 交换维度，使 Patch 排列一致
+        mask = mask.view(num_patches * num_patches, patch_size * patch_size)  # 展平成 Patch 级 Mask
+        mask = mask.mean(dim=1)  # 计算 Patch 内的平均值
+        mask = (mask > 0.5).float()  # 二值化，最终转换为 [L] 形状的 mask (L = num_patches²)
+
+        # 生成恢复索引
+        ids_restore = torch.arange(mask.numel(), device=device)  # 生成从 0 到 L-1 的索引
+        return mask, ids_restore
 
     def initialize_weights(self):
         # initialization
@@ -147,41 +187,89 @@ class MaskedAutoencoderViT(nn.Module):
 
         return x_masked, mask, ids_restore
 
-    def forward_encoder(self, x, mask_ratio):
-        # embed patches
-        x = self.patch_embed(x)
+    def load_batch_masks(self, mask_paths, device):
+        """
+        从 batch 内的所有 `mask_paths` 读取 Mask，并转换为 Patch 级别的 Mask
+        """
+        batch_size = len(mask_paths)
+        masks, ids_restores = [], []
 
-        # add pos embed w/o cls token
-        x = x + self.pos_embed[:, 1:, :]
+        for i in range(batch_size):
+            mask, ids_restore = self.load_local_mask(mask_paths[i], patch_size=self.patch_embed.patch_size[0],
+                                                     img_size=224, device=device)
+            masks.append(mask)
+            ids_restores.append(ids_restore)
 
-        # masking: length -> length * mask_ratio
-        x, mask, ids_restore = self.random_masking(x, mask_ratio)
+        masks = torch.stack(masks)  # [B, L]
+        ids_restores = torch.stack(ids_restores)  # [B, L]
 
-        # append cls token
+        return masks, ids_restores
+
+    # --------------------- 🚀 修改 `forward_encoder()` 适配本地 Mask ---------------------
+    def forward_encoder(self, x, mask_paths):
+        """
+        - x: 输入图像的 Patch 表示 [B, L, D]
+        - mask_paths: batch 内的 Mask 文件路径 (长度 B)
+        """
+        x = self.patch_embed(x)  # 计算 Patch Embedding
+        x = x + self.pos_embed[:, 1:, :]  # 加入 Positional Encoding
+
+        # 🚀 从本地 Mask 读取 batch 级 mask
+        masks, ids_restores = self.load_batch_masks(mask_paths, x.device)
+
+        batch_size = x.shape[0]
+        x_masked = []
+        for i in range(batch_size):
+            ids_keep = masks[i].nonzero(as_tuple=True)[0]  # 只保留未 Mask 的 Patch
+            x_masked.append(x[i, ids_keep, :])
+
+        # **🚀 方案 1：填充所有 `x_masked` 使其长度一致**
+        max_len = max([x_m.shape[0] for x_m in x_masked])  # 计算最大长度
+        x_masked_padded = [torch.cat([x_m, torch.zeros(max_len - x_m.shape[0], x_m.shape[1], device=x.device)]) for
+                               x_m in x_masked]
+        x_masked_padded = torch.stack(x_masked_padded)
+
+        x_masked = x_masked_padded  # 🚀 现在所有 x_masked 形状一致
+        # 添加 CLS Token
         cls_token = self.cls_token + self.pos_embed[:, :1, :]
-        cls_tokens = cls_token.expand(x.shape[0], -1, -1)
-        x = torch.cat((cls_tokens, x), dim=1)
+        cls_tokens = cls_token.expand(batch_size, -1, -1)
+        x_masked = torch.cat((cls_tokens, x_masked), dim=1)
 
-        # apply Transformer blocks
+        # 经过 Transformer Encoder
         for blk in self.blocks:
-            x = blk(x)
-        x = self.norm(x)
+            x_masked = blk(x_masked)
+        x_masked = self.norm(x_masked)
 
-        return x, mask, ids_restore
+        return x_masked, masks, ids_restores
+
+    # def forward_encoder(self, x, mask_ratio):
+    #     # embed patches
+    #     x = self.patch_embed(x)
+    #
+    #     # add pos embed w/o cls token
+    #     x = x + self.pos_embed[:, 1:, :]
+    #
+    #     # masking: length -> length * mask_ratio
+    #     x, mask, ids_restore = self.random_masking(x, mask_ratio)
+    #
+    #     # append cls token
+    #     cls_token = self.cls_token + self.pos_embed[:, :1, :]
+    #     cls_tokens = cls_token.expand(x.shape[0], -1, -1)
+    #     x = torch.cat((cls_tokens, x), dim=1)
+    #
+    #     # apply Transformer blocks
+    #     for blk in self.blocks:
+    #         x = blk(x)
+    #     x = self.norm(x)
+    #
+    #     return x, mask, ids_restore
 
     def forward_decoder(self, x, ids_restore):
-        print(f"Debug: In decoder, ids_restore.shape = {ids_restore.shape}")
-
         # embed tokens
         x = self.decoder_embed(x)
 
-        # **修正 `num_masked` 计算方式**
-        num_masked = max(0, ids_restore.shape[1] - (x.shape[1] - 1))
-        assert num_masked >= 0, f"num_masked < 0: {num_masked}, ids_restore.shape={ids_restore.shape}, x.shape={x.shape}"
-
-        mask_tokens = self.mask_token.repeat(x.shape[0], num_masked, 1)  # [N, num_masked, D]
-        print(f"Debug: Updated mask_tokens.shape = {mask_tokens.shape}, expected = ({x.shape[0]}, {num_masked}, {x.shape[2]})")
-
+        # append mask tokens to sequence
+        mask_tokens = self.mask_token.repeat(x.shape[0], ids_restore.shape[1] + 1 - x.shape[1], 1)
         x_ = torch.cat([x[:, 1:, :], mask_tokens], dim=1)  # no cls token
         x_ = torch.gather(x_, dim=1, index=ids_restore.unsqueeze(-1).repeat(1, 1, x.shape[2]))  # unshuffle
         x = torch.cat([x[:, :1, :], x_], dim=1)  # append cls token
@@ -202,7 +290,6 @@ class MaskedAutoencoderViT(nn.Module):
 
         return x
 
-
     def forward_loss(self, imgs, pred, mask):
         """
         imgs: [N, 3, H, W]
@@ -221,45 +308,17 @@ class MaskedAutoencoderViT(nn.Module):
         loss = (loss * mask).sum() / mask.sum()  # mean loss on removed patches
         return loss
 
-    def forward(self, imgs, mask_ratio=0.75, custom_mask=None):
-        if custom_mask is not None:
-            # Step 1: Patch embedding
-            x = self.patch_embed(imgs)  # [N, L, D]
-            x = x + self.pos_embed[:, 1:, :]
-            N, L, D = x.shape
+    def forward(self, imgs, mask_paths):
+        """
+        imgs: [B, C, H, W]
+        mask_paths: batch 内 mask 文件路径 (长度 B)
+        """
 
-            # Step 2: Apply manual masking
-            mask = custom_mask  # shape: [N, L]
-            visible_idx = (mask == 0).nonzero(as_tuple=True)[1]  # 获取可见的 patch 索引
-            masked_idx = (mask == 1).nonzero(as_tuple=True)[1]  # 获取被 mask 的 patch 索引
-
-            # **只选取可见的 patch**
-            x_masked = x[:, visible_idx, :]
-
-            # Step 3: 修正 `ids_restore`，确保 decoder 正确知道如何恢复原始顺序
-            ids_restore = torch.cat([visible_idx, masked_idx], dim=0).unsqueeze(0).expand(N, -1)
-            assert ids_restore.shape == (N, L), f"ids_restore.shape mismatch: {ids_restore.shape} != ({N}, {L})"
-
-            # **Step 4: 添加 cls token**
-            cls_token = self.cls_token + self.pos_embed[:, :1, :]
-            cls_tokens = cls_token.expand(N, -1, -1)
-            x_masked = torch.cat((cls_tokens, x_masked), dim=1)  # [N, 1 + visible, D]
-
-            # **Step 5: 通过 Encoder**
-            for blk in self.blocks:
-                x_masked = blk(x_masked)
-            latent = self.norm(x_masked)
-        else:
-            latent, mask, ids_restore = self.forward_encoder(imgs, mask_ratio)
-
-        # **Debug: 观察 `ids_restore`**
-        print(f"Debug: Fixed ids_restore.shape = {ids_restore.shape}")
-
-        pred = self.forward_decoder(latent, ids_restore)  # [N, L, p*p*3]
+        latent, mask, ids_restore = self.forward_encoder(imgs, mask_paths)  # ✅ 现在支持 batch mask
+        pred = self.forward_decoder(latent, ids_restore)
         loss = self.forward_loss(imgs, pred, mask)
+
         return loss, pred, mask
-
-
 
 
 def mae_vit_base_patch16_dec512d8b(**kwargs):

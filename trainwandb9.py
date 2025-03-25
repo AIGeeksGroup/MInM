@@ -96,14 +96,10 @@ class MaskedImageDataset(Dataset):
 
 def get_args_parser():
     parser = argparse.ArgumentParser('MAE pre-training', add_help=False)
-    parser.add_argument('--batch_size', default=128, type=int)
+    parser.add_argument('--batch_size', default=64, type=int)
     parser.add_argument('--epochs', default=600, type=int)
     parser.add_argument('--accum_iter', default=1, type=int)
-<<<<<<< HEAD
     parser.add_argument('--model', default='mae_vit_base_patch16', type=str)
-=======
-    parser.add_argument('--model', default='mae_vit_large_patch16', type=str)
->>>>>>> 35dd79238a9cbdef316ef0ce9c04875e8fbbcf6b
     parser.add_argument('--input_size', default=224, type=int)
     parser.add_argument('--mask_ratio', default=0.75, type=float)
     parser.add_argument('--norm_pix_loss', action='store_true')
@@ -113,15 +109,9 @@ def get_args_parser():
     parser.add_argument('--blr', type=float, default=1e-3)
     parser.add_argument('--min_lr', type=float, default=1e-6)  # Adjusted for cosine annealing
     parser.add_argument('--warmup_epochs', type=int, default=40)
-<<<<<<< HEAD
-    parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette', type=str)
-    parser.add_argument('--output_dir', default='output_dir7', type=str)
-    parser.add_argument('--log_dir', default='output_dir7', type=str)
-=======
-    parser.add_argument('--data_path', default='/home/zbz5349/WorkSpace/aigeeks/MInM-code/data1/imagenette', type=str)
-    parser.add_argument('--output_dir', default='output_dir3', type=str)
-    parser.add_argument('--log_dir', default='output_dir3', type=str)
->>>>>>> 35dd79238a9cbdef316ef0ce9c04875e8fbbcf6b
+    parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/data/in1k/ImageNet-1K', type=str)
+    parser.add_argument('--output_dir', default='output_dir10', type=str)
+    parser.add_argument('--log_dir', default='output_dir10', type=str)
     parser.add_argument('--device', default='cuda', type=str)
     parser.add_argument('--seed', default=0, type=int)
     parser.add_argument('--resume', default='', type=str)
@@ -143,11 +133,7 @@ def main(args):
             project="MInM",
             entity="visual-intelligence-laboratory",
             config=vars(args),
-<<<<<<< HEAD
-            name="MinM_imagenette_bs256_epoch600_withevaluate_cosine"
-=======
-            name="MAE_imagenette_bs256_epoch600_withevaluate_cosine"
->>>>>>> 35dd79238a9cbdef316ef0ce9c04875e8fbbcf6b
+            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine"
         )
 
     misc.init_distributed_mode(args)
@@ -169,7 +155,7 @@ def main(args):
 
     dataset_train = MaskedImageDataset(
         image_root=os.path.join(args.data_path, "train"),
-        mask_root=os.path.join(args.data_path, "mask/masks_applied"),
+        mask_root=os.path.join(args.data_path, "sam/masks_applied"),
         transform=transform_train
     )
     if len(dataset_train) == 0:
@@ -215,12 +201,8 @@ def main(args):
     # Training loop
     print(f"Start training for {args.epochs} epochs")
     start_time = time.time()
-<<<<<<< HEAD
     best_acc1 = 0.0  # 跟踪最佳Top-1准确率
     best_acc5 = 0.0  # 跟踪最佳Top-5准确率（如果适用）
-=======
-    best_accuracy = 0.0
->>>>>>> 35dd79238a9cbdef316ef0ce9c04875e8fbbcf6b
 
     for epoch in range(args.start_epoch, args.epochs):
         if args.distributed:
@@ -246,7 +228,6 @@ def main(args):
         if misc.is_main_process():
             wandb.log({'epoch': epoch, 'train_loss': train_stats.get('loss', None), 'learning_rate': current_lr})
 
-<<<<<<< HEAD
         # 每5个epoch或最后一个epoch执行Linear Probing
         if (epoch + 1) % 10 == 2 or epoch + 1 == args.epochs:
             # 保存临时模型
@@ -287,22 +268,6 @@ def main(args):
                             epoch=epoch,
                             name="best_acc.pth"
                         )
-=======
-        # Evaluate and save best model at the end
-        if epoch + 1 == args.epochs:
-            checkpoint_path = os.path.join(args.output_dir, "temporary.pth")
-            torch.save({'model': model_without_ddp.state_dict()}, checkpoint_path, _use_new_zipfile_serialization=False)
-            current_accuracy = linear_probing(checkpoint_path, args)
-            print(f"Accuracy after linear probing: {current_accuracy:.2f}%")
-
-            if misc.is_main_process():
-                wandb.log({'best_accuracy': current_accuracy})
-                if current_accuracy > best_accuracy:
-                    best_accuracy = current_accuracy
-                    best_path = os.path.join(args.output_dir, "best_acc.pth")
-                    torch.save({'model': model_without_ddp.state_dict()}, best_path, _use_new_zipfile_serialization=False)
-                    wandb.save(best_path)
->>>>>>> 35dd79238a9cbdef316ef0ce9c04875e8fbbcf6b
 
         # Periodic checkpoint
         if (epoch + 1) % args.save_interval == 0 or epoch + 1 == args.epochs:

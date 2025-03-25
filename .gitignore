@@ -8,3 +8,5 @@ val/
 wandb/
 *.log
 
+minm_mae/
+MinM/

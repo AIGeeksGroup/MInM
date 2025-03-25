@@ -25,6 +25,4 @@ export MASTER_PORT="29500"
 
 #python vit_to_mmdet.py /path/to/vit.pth /path/to/mmdet_vit.pth
 
-cd ~/PycharmProjects/mmdetection
-
-python tools/train.py configs/mask_rcnn/mask-rcnn_vit_fpn.py
+python sam_topk_multiple.py

@@ -164,9 +164,9 @@ if __name__ == "__main__":
     # target_folder = './imagenette/imagenette/masked2'
     log_filename = './log.txt'
 
-    source_segmentation_folder = '/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/swap'  # 分割图像路径
-    source_original_folder = '/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/train'  # 原始图像路径
-    target_folder = '/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/Sam2/sam2/imagenette/mask'  # 输出路径
+    source_segmentation_folder = '/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/data/in1k/ImageNet-1K/mask'  # 分割图像路径
+    source_original_folder = '/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/data/in1k/ImageNet-1K/train'  # 原始图像路径
+    target_folder = '/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/data/in1k/ImageNet-1K/sam'  # 输出路径
 
     process_and_save_images(source_segmentation_folder, source_original_folder, target_folder,
                             log_filename=log_filename)
