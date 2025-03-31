@@ -26,9 +26,9 @@ import timm.optim.optim_factory as optim_factory
 import util.misc as misc
 from util.misc import NativeScalerWithGradNormCount as NativeScaler
 
-import models_mae2 as models_mae
+import models_mae as models_mae
 from engine_probing2 import linear_probing
-from engine_pretrain2 import train_one_epoch
+from engine_pretrain import train_one_epoch
 import wandb
 
 wandb.login(key="9c1af0a383f6b1138e4ab20f65a4d6e4f194ffad")
@@ -134,7 +134,7 @@ def main(args):
             project="MInM",
             entity="visual-intelligence-laboratory",
             config=vars(args),
-            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine"
+            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine_randommask"
         )
 
     misc.init_distributed_mode(args)
@@ -154,11 +154,8 @@ def main(args):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
-    dataset_train = MaskedImageDataset(
-        image_root=os.path.join(args.data_path, "train"),
-        mask_root=os.path.join(args.data_path, "sam/masks_applied"),
-        transform=transform_train
-    )
+    dataset_train = datasets.ImageFolder(os.path.join(args.data_path, 'train'), transform=transform_train)
+    
     if len(dataset_train) == 0:
         raise ValueError("❌ Dataset is empty! Check data paths.")
 
@@ -238,7 +235,7 @@ def main(args):
             wandb.log({'epoch': epoch, 'train_loss': train_stats.get('loss', None), 'learning_rate': current_lr})
 
         # 每5个epoch或最后一个epoch执行Linear Probing
-        if (epoch + 1) % 10 == 2 or epoch + 1 == args.epochs:
+        if (epoch + 1) % 100 == 99 or epoch + 1 == args.epochs:
             # 保存临时模型
             checkpoint_path = os.path.join(args.output_dir, "temporary.pth")
             misc.save_model(

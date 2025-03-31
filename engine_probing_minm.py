@@ -71,7 +71,7 @@ def get_args_parser():
                         help='Use class token instead of global pool for classification')
 
     # Dataset parameters
-    parser.add_argument('--data_path', default='/home/ytia0661@acfr.usyd.edu.au/PycharmProjects/data/in1k/imagenet1k_linear_probe', type=str,
+    parser.add_argument('--data_path', default='/data/home/zbz5349/WorkSpace/aigeeks/minm_mae/imagenet1k_linear_probe', type=str,
                         help='dataset path')
     parser.add_argument('--nb_classes', default=162, type=int,
                         help='number of the classification types')

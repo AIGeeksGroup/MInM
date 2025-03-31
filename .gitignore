@@ -7,6 +7,13 @@ MinM/
 val/
 wandb/
 *.log
+output_dir7/
+output_dir8/
+output_dir9/
+output_dir10/
+output_dirminm/
+output_dir1kminm/
+output_images/
 
 minm_mae/
 MinM/

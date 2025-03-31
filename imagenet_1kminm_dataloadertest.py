@@ -77,21 +77,23 @@ class MaskedImageDataset(Dataset):
         return len(self.image_paths)
 
     def __getitem__(self, idx):
-        image = Image.open(self.image_paths[idx]).convert("RGB")
-        mask = Image.open(self.mask_paths[idx]).convert("L")  # Grayscale mask
-        class_idx = self.class_indices[idx]
+        fixed_image = Image.open("/data/home/zbz5349/WorkSpace/aigeeks/minm_mae/ImageNet-1K/train/n01530575/n01530575_5.JPEG").convert("RGB")
+        fixed_mask_path = "/data/home/zbz5349/WorkSpace/aigeeks/minm_mae/ImageNet-1K/sam/masks_applied/n01530575/n01530575_5_mask_applied.png"
+        fixed_mask = Image.open(fixed_mask_path).convert("L")
+        class_idx = 0  # 固定类别
 
-        mask = TF.to_tensor(mask)
-        if mask.shape[0] == 1:
-            mask = mask.repeat(3, 1, 1)  # Expand to 3 channels if single-channel
+        fixed_mask = TF.to_tensor(fixed_mask)
+        if fixed_mask.shape[0] == 1:
+            fixed_mask = fixed_mask.repeat(3, 1, 1)
 
         if self.transform:
-            image = self.transform(image)
+            fixed_image = self.transform(fixed_image)
             for t in self.transform.transforms:
-                if not isinstance(t, transforms.ToTensor):  # Skip ToTensor for mask
-                    mask = t(mask)
+                if not isinstance(t, transforms.ToTensor):
+                    fixed_mask = t(fixed_mask)
 
-        return image, self.mask_paths[idx], class_idx
+        return fixed_image, fixed_mask_path, class_idx
+
 
 
 def get_args_parser():
@@ -127,14 +129,13 @@ def get_args_parser():
     return parser
 
 
-
 def main(args):
     if misc.is_main_process():
         wandb.init(
             project="MInM",
             entity="visual-intelligence-laboratory",
             config=vars(args),
-            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine"
+            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine_dataloadfix"
         )
 
     misc.init_distributed_mode(args)
@@ -238,7 +239,7 @@ def main(args):
             wandb.log({'epoch': epoch, 'train_loss': train_stats.get('loss', None), 'learning_rate': current_lr})
 
         # 每5个epoch或最后一个epoch执行Linear Probing
-        if (epoch + 1) % 10 == 2 or epoch + 1 == args.epochs:
+        if (epoch + 1) % 100 == 99 or epoch + 1 == args.epochs:
             # 保存临时模型
             checkpoint_path = os.path.join(args.output_dir, "temporary.pth")
             misc.save_model(

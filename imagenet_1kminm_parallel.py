@@ -26,9 +26,9 @@ import timm.optim.optim_factory as optim_factory
 import util.misc as misc
 from util.misc import NativeScalerWithGradNormCount as NativeScaler
 
-import models_mae2 as models_mae
-from engine_probing2 import linear_probing
-from engine_pretrain2 import train_one_epoch
+import models_minm as models_mae
+from engine_probing_minm import linear_probing
+from engine_pretrain_minm import train_one_epoch
 import wandb
 
 wandb.login(key="9c1af0a383f6b1138e4ab20f65a4d6e4f194ffad")
@@ -77,6 +77,8 @@ class MaskedImageDataset(Dataset):
         return len(self.image_paths)
 
     def __getitem__(self, idx):
+        if idx < 10:
+            print(f"🧵 [Worker PID {os.getpid()}] Loading sample idx={idx}")
         image = Image.open(self.image_paths[idx]).convert("RGB")
         mask = Image.open(self.mask_paths[idx]).convert("L")  # Grayscale mask
         class_idx = self.class_indices[idx]
@@ -116,7 +118,7 @@ def get_args_parser():
     parser.add_argument('--seed', default=0, type=int)
     parser.add_argument('--resume', default='', type=str)
     parser.add_argument('--start_epoch', default=0, type=int)
-    parser.add_argument('--num_workers', default=10, type=int)
+    parser.add_argument('--num_workers', default=24, type=int)
     parser.add_argument('--pin_mem', action='store_true')
     parser.set_defaults(pin_mem=True)
     parser.add_argument('--world_size', default=1, type=int)
@@ -134,7 +136,7 @@ def main(args):
             project="MInM",
             entity="visual-intelligence-laboratory",
             config=vars(args),
-            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine"
+            name="MinM_imagenet1k_bs256_epoch600_withevaluate_cosine_parallel"
         )
 
     misc.init_distributed_mode(args)
@@ -174,7 +176,7 @@ def main(args):
     )
 
     # Model setup
-    model = models_mae.__dict__[args.model](norm_pix_loss=args.norm_pix_loss)
+    model = models_mae.__dict__[args.model](norm_pix_loss=args.norm_pix_loss, use_instance_mask=True)
     model.to(device)
     model_without_ddp = model
 
@@ -238,7 +240,7 @@ def main(args):
             wandb.log({'epoch': epoch, 'train_loss': train_stats.get('loss', None), 'learning_rate': current_lr})
 
         # 每5个epoch或最后一个epoch执行Linear Probing
-        if (epoch + 1) % 10 == 2 or epoch + 1 == args.epochs:
+        if (epoch + 1) % 100 == 99 or epoch + 1 == args.epochs:
             # 保存临时模型
             checkpoint_path = os.path.join(args.output_dir, "temporary.pth")
             misc.save_model(
