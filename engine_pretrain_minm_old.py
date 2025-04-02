@@ -36,36 +36,15 @@ def train_one_epoch(model: torch.nn.Module,
     if log_writer is not None:
         print('log_dir: {}'.format(log_writer.log_dir))
 
-    for data_iter_step, (samples, mask_tensors, class_indices) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):
-        if epoch == 0 and data_iter_step < 1:
-            import torchvision.utils as vutils
-            import matplotlib.pyplot as plt
-            import os
-
-            os.makedirs("debug_vis", exist_ok=True)
-
-            for i in range(min(4, samples.shape[0])):
-                vutils.save_image(samples[i], f"...image{i}.png")
-
-            # 保存 patch-level mask（如果是 14x14）
-            try:
-                mask_map = mask_tensors[0].view(int(mask_tensors.shape[1]**0.5), -1).float().cpu()
-                plt.imshow(mask_map, cmap='gray')
-                plt.title(f"Mask (patch level) — Epoch {epoch} Step {data_iter_step}")
-                plt.savefig(f"debug_vis/epoch{epoch}_step{data_iter_step}_mask0.png")
-                plt.close()
-            except:
-                print("⚠️ Could not visualize mask — shape was:", mask_tensors[0].shape)
+    for data_iter_step, (samples, mask_paths, class_indices) in enumerate(metric_logger.log_every(data_loader, print_freq, header)):
 
         # we use a per iteration (instead of per epoch) lr scheduler
         if data_iter_step % accum_iter == 0:
             lr_sched.adjust_learning_rate(optimizer, data_iter_step / len(data_loader) + epoch, args)
 
         samples = samples.to(device, non_blocking=True)
-        mask_tensors = mask_tensors.to(device, non_blocking=True)
         with torch.cuda.amp.autocast():
-            loss, _, _ = model(samples, mask_tensors)
-
+            loss, _, _ = model(samples, mask_paths)
 
         loss_value = loss.item()
 

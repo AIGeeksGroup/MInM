@@ -30,25 +30,22 @@ import models_minm as models_mae
 from engine_probing_minm import linear_probing
 from engine_pretrain_minm import train_one_epoch
 import wandb
+import torchvision.utils as vutils
+import matplotlib.pyplot as plt
 
 wandb.login(key="9c1af0a383f6b1138e4ab20f65a4d6e4f194ffad")
 
+from models_minm import InstanceGuidedMasking
 
 class MaskedImageDataset(Dataset):
-    def __init__(self, image_root, mask_root, transform=None):
-        """
-        image_root: Root directory of training images, containing subdirectories (classes).
-        mask_root: Root directory of masks, with corresponding subdirectories (classes).
-        transform: Image transformations.
-        """
+    def __init__(self, image_root, mask_root, transform=None, patch_size=16, img_size=224):
         self.image_paths = []
         self.mask_paths = []
         self.class_indices = []
         self.transform = transform if transform else transforms.ToTensor()
+        self.processor = InstanceGuidedMasking(patch_size, img_size)
 
         class_folders = sorted(os.listdir(image_root))
-        print(f"Detected {len(class_folders)} classes: {class_folders}")
-
         for class_idx, class_name in enumerate(class_folders):
             image_class_dir = os.path.join(image_root, class_name)
             mask_class_dir = os.path.join(mask_root, class_name)
@@ -57,8 +54,6 @@ class MaskedImageDataset(Dataset):
                 continue
 
             images = sorted([f for f in os.listdir(image_class_dir) if f.endswith(".JPEG")])
-            masks = sorted([f for f in os.listdir(mask_class_dir) if f.endswith("_mask_applied.png")])
-
             for img_name in images:
                 image_path = os.path.join(image_class_dir, img_name)
                 mask_name = img_name.replace(".JPEG", "_mask_applied.png")
@@ -68,32 +63,32 @@ class MaskedImageDataset(Dataset):
                     self.image_paths.append(image_path)
                     self.mask_paths.append(mask_path)
                     self.class_indices.append(class_idx)
-                else:
-                    print(f"⚠️ Warning: Mask not found for {mask_path}")
-
-        print(f"✅ Loaded {len(self.image_paths)} images and {len(self.mask_paths)} masks")
 
     def __len__(self):
         return len(self.image_paths)
 
     def __getitem__(self, idx):
-        if idx < 10:
-            print(f"🧵 [Worker PID {os.getpid()}] Loading sample idx={idx}")
-        image = Image.open(self.image_paths[idx]).convert("RGB")
-        mask = Image.open(self.mask_paths[idx]).convert("L")  # Grayscale mask
-        class_idx = self.class_indices[idx]
+        if idx == 0 and torch.rand(1).item() < 0.05:
+            vutils.save_image(image, f"debug_image_{idx}.png")
 
-        mask = TF.to_tensor(mask)
-        if mask.shape[0] == 1:
-            mask = mask.repeat(3, 1, 1)  # Expand to 3 channels if single-channel
+            mask_img = mask.unsqueeze(0)  # [1, H, W]
+            vutils.save_image(mask_img, f"debug_mask_{idx}.png")
+
+            # 可视化 patch-level mask
+            plt.imshow(processed_mask.view(14, 14).cpu(), cmap='gray')
+            plt.title(f"Processed mask (idx {idx})")
+            plt.savefig(f"debug_patchmask_{idx}.png")
+            plt.close()
+        image = Image.open(self.image_paths[idx]).convert("RGB")
+        mask = Image.open(self.mask_paths[idx]).convert("L")  # [H, W] PIL image
 
         if self.transform:
-            image = self.transform(image)
-            for t in self.transform.transforms:
-                if not isinstance(t, transforms.ToTensor):  # Skip ToTensor for mask
-                    mask = t(mask)
+            image = self.transform(image)  # 只对 image 做 transform
 
-        return image, self.mask_paths[idx], class_idx
+        mask = TF.to_tensor(mask).squeeze(0)  # [H, W] float tensor
+        processed_mask = self.processor._process_mask(mask)  # [num_patches]
+
+        return image, processed_mask, self.class_indices[idx]
 
 
 def get_args_parser():

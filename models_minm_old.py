@@ -106,25 +106,28 @@ class MaskedAutoencoderViT(nn.Module):
         mask = torch.gather(mask, dim=1, index=ids_restore)
         return x_masked, mask, ids_restore
 
-    def forward_encoder(self, x, processed_masks):
+    def forward_encoder(self, x, mask_paths_or_ratio):
         x = self.patch_embed(x)
         x = x + self.pos_embed[:, 1:, :]
-
-        # processed_masks: [B, num_patches]
-        mask = processed_masks
-        ids_restore = torch.arange(mask.size(1), device=x.device).unsqueeze(0).expand(x.size(0), -1)
-
-        x_masked = []
-        for i in range(x.size(0)):
-            ids_keep = mask[i].nonzero(as_tuple=True)[0]
-            x_masked.append(x[i, ids_keep, :])
-        max_len = max([xi.size(0) for xi in x_masked])
-        x_masked = [torch.cat([xi, torch.zeros(max_len - xi.size(0), xi.size(1), device=x.device)]) for xi in x_masked]
-        x = torch.stack(x_masked)
-
+        if self.use_instance_mask:
+            masks, ids_restores = [], []
+            for path in mask_paths_or_ratio:
+                m, ids = self.mask_processor.load_mask(path, x.device)
+                masks.append(m)
+                ids_restores.append(ids)
+            mask = torch.stack(masks)
+            ids_restore = torch.stack(ids_restores)
+            x_masked = []
+            for i in range(x.size(0)):
+                ids_keep = mask[i].nonzero(as_tuple=True)[0]
+                x_masked.append(x[i, ids_keep, :])
+            max_len = max([xi.size(0) for xi in x_masked])
+            x_masked = [torch.cat([xi, torch.zeros(max_len - xi.size(0), xi.size(1), device=x.device)]) for xi in x_masked]
+            x = torch.stack(x_masked)
+        else:
+            x, mask, ids_restore = self.random_masking(x, mask_paths_or_ratio)
         cls_tokens = self.cls_token + self.pos_embed[:, :1, :]
         x = torch.cat((cls_tokens.expand(x.size(0), -1, -1), x), dim=1)
-
         for blk in self.blocks:
             x = blk(x)
         x = self.norm(x)
@@ -154,9 +157,8 @@ class MaskedAutoencoderViT(nn.Module):
         loss = (loss * mask).sum() / mask.sum()
         return loss
 
-    def forward(self, imgs, mask_tensor):
-        mask_tensor = mask_tensor.to(imgs.device)
-        latent, mask, ids_restore = self.forward_encoder(imgs, mask_tensor)
+    def forward(self, imgs, mask_paths_or_ratio):
+        latent, mask, ids_restore = self.forward_encoder(imgs, mask_paths_or_ratio)
         pred = self.forward_decoder(latent, ids_restore)
         loss = self.forward_loss(imgs, pred, mask)
         return loss, pred, mask
