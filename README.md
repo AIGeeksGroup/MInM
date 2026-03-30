@@ -1,158 +1,219 @@
-## Masked Autoencoders: A PyTorch Implementation
+# MInM: Mask Instance Modeling for Visual Representation Learning
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/11435359/146857310-f258c86c-fde6-48e8-9cee-badd2b21bd2c.png" width="480">
-</p>
+This is the official repository for the paper:
 
+> **MInM: Mask Instance Modeling for Visual Representation Learning**
+>
+> Yihao Wan\*, [Author 2]\*, [Author 3]†
+>
+> \*Equal contribution. †Corresponding author.
+>
+> ### [Paper](https://arxiv.org/) | [HF Paper](https://huggingface.co/papers/)
 
-This is a PyTorch/GPU re-implementation of the paper [Masked Autoencoders Are Scalable Vision Learners](https://arxiv.org/abs/2111.06377):
-```
-@Article{MaskedAutoencoders2021,
-  author  = {Kaiming He and Xinlei Chen and Saining Xie and Yanghao Li and Piotr Doll{\'a}r and Ross Girshick},
-  journal = {arXiv:2111.06377},
-  title   = {Masked Autoencoders Are Scalable Vision Learners},
-  year    = {2021},
+> [!NOTE]
+> _⚠️ **Repository Structure**: This repo contains the **MInM pre-training framework** (extending MAE with instance-guided masking) and evaluation pipelines for **ImageNet**, **ImageNette**, and **ImageWoof**._
+
+## Citation
+
+If you find our work useful, please cite:
+
+```bibtex
+@article{wan2026minm,
+  title={MInM: Mask Instance Modeling for Visual Representation Learning},
+  author={Wan, Yihao and others},
+  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  year={2026}
 }
 ```
 
-* The original implementation was in TensorFlow+TPU. This re-implementation is in PyTorch+GPU.
 
-* This repo is a modification on the [DeiT repo](https://github.com/facebookresearch/deit). Installation and preparation follow that repo.
+## Introduction
 
-* This repo is based on [`timm==0.3.2`](https://github.com/rwightman/pytorch-image-models), for which a [fix](https://github.com/rwightman/pytorch-image-models/issues/420#issuecomment-776459842) is needed to work with PyTorch 1.8.1+.
+Standard Masked Autoencoders (MAE) rely on **random masking**, which treats all patches equally regardless of semantic content. This leads to suboptimal representation learning — the model spends equal effort reconstructing uninformative background regions and semantically rich object regions.
 
-### Catalog
+We present **MInM (Mask Instance Modeling)**, an instance-guided masking strategy that leverages SAM-generated instance segmentation masks to provide **semantic and structural guidance** during masked image modeling. Key contributions include:
 
-- [x] Visualization demo
-- [x] Pre-trained checkpoints + fine-tuning code
-- [x] Pre-training code
+- **Instance-Guided Masking**: Replacing random masking with patch-level masks derived from SAM instance segmentation, forcing the model to reconstruct semantically coherent object regions.
+- **Patch-Level Mask Aggregation**: A differentiable module (`InstanceGuidedMasking`) that converts pixel-level binary masks to patch-level masking decisions via spatial averaging and thresholding.
+- **Improved Representation Quality**: Demonstrating gains in linear probing and fine-tuning accuracy on ImageNet, ImageNette, and ImageWoof benchmarks.
 
-### Visualization demo
+## ⚙️ Installation
 
-Run our interactive visualization demo using [Colab notebook](https://colab.research.google.com/github/facebookresearch/mae/blob/main/demo/mae_visualize.ipynb) (no GPU needed):
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/11435359/147859292-77341c70-2ed8-4703-b153-f505dcb6f2f8.png" width="600">
-</p>
+### 1. Environment Setup
 
-### Fine-tuning with pre-trained checkpoints
+```bash
+# 1. Create environment
+conda create -n minm python=3.10 -y
+conda activate minm
 
-The following table provides the pre-trained checkpoints used in the paper, converted from TF/TPU to PT/GPU:
-<table><tbody>
-<!-- START TABLE -->
-<!-- TABLE HEADER -->
-<th valign="bottom"></th>
-<th valign="bottom">ViT-Base</th>
-<th valign="bottom">ViT-Large</th>
-<th valign="bottom">ViT-Huge</th>
-<!-- TABLE BODY -->
-<tr><td align="left">pre-trained checkpoint</td>
-<td align="center"><a href="https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth">download</a></td>
-<td align="center"><a href="https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth">download</a></td>
-<td align="center"><a href="https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_huge.pth">download</a></td>
-</tr>
-<tr><td align="left">md5</td>
-<td align="center"><tt>8cad7c</tt></td>
-<td align="center"><tt>b8b06e</tt></td>
-<td align="center"><tt>9bdbb0</tt></td>
-</tr>
-</tbody></table>
+# 2. Install dependencies
+pip install -r requirements.txt
+```
 
-The fine-tuning instruction is in [FINETUNE.md](FINETUNE.md).
+### 2. User Configuration (📌 Input Required)
 
-By fine-tuning these pre-trained models, we rank #1 in these classification tasks (detailed in the paper):
-<table><tbody>
-<!-- START TABLE -->
-<!-- TABLE HEADER -->
-<th valign="bottom"></th>
-<th valign="bottom">ViT-B</th>
-<th valign="bottom">ViT-L</th>
-<th valign="bottom">ViT-H</th>
-<th valign="bottom">ViT-H<sub>448</sub></th>
-<td valign="bottom" style="color:#C0C0C0">prev best</td>
-<!-- TABLE BODY -->
-<tr><td align="left">ImageNet-1K (no external data)</td>
-<td align="center">83.6</td>
-<td align="center">85.9</td>
-<td align="center">86.9</td>
-<td align="center"><b>87.8</b></td>
-<td align="center" style="color:#C0C0C0">87.1</td>
-</tr>
-<td colspan="5"><font size="1"><em>following are evaluation of the same model weights (fine-tuned in original ImageNet-1K):</em></font></td>
-<tr>
-</tr>
-<tr><td align="left">ImageNet-Corruption (error rate) </td>
-<td align="center">51.7</td>
-<td align="center">41.8</td>
-<td align="center"><b>33.8</b></td>
-<td align="center">36.8</td>
-<td align="center" style="color:#C0C0C0">42.5</td>
-</tr>
-<tr><td align="left">ImageNet-Adversarial</td>
-<td align="center">35.9</td>
-<td align="center">57.1</td>
-<td align="center">68.2</td>
-<td align="center"><b>76.7</b></td>
-<td align="center" style="color:#C0C0C0">35.8</td>
-</tr>
-<tr><td align="left">ImageNet-Rendition</td>
-<td align="center">48.3</td>
-<td align="center">59.9</td>
-<td align="center">64.4</td>
-<td align="center"><b>66.5</b></td>
-<td align="center" style="color:#C0C0C0">48.7</td>
-</tr>
-<tr><td align="left">ImageNet-Sketch</td>
-<td align="center">34.5</td>
-<td align="center">45.3</td>
-<td align="center">49.6</td>
-<td align="center"><b>50.9</b></td>
-<td align="center" style="color:#C0C0C0">36.0</td>
-</tr>
-<td colspan="5"><font size="1"><em>following are transfer learning by fine-tuning the pre-trained MAE on the target dataset:</em></font></td>
-</tr>
-<tr><td align="left">iNaturalists 2017</td>
-<td align="center">70.5</td>
-<td align="center">75.7</td>
-<td align="center">79.3</td>
-<td align="center"><b>83.4</b></td>
-<td align="center" style="color:#C0C0C0">75.4</td>
-</tr>
-<tr><td align="left">iNaturalists 2018</td>
-<td align="center">75.4</td>
-<td align="center">80.1</td>
-<td align="center">83.0</td>
-<td align="center"><b>86.8</b></td>
-<td align="center" style="color:#C0C0C0">81.2</td>
-</tr>
-<tr><td align="left">iNaturalists 2019</td>
-<td align="center">80.5</td>
-<td align="center">83.4</td>
-<td align="center">85.7</td>
-<td align="center"><b>88.3</b></td>
-<td align="center" style="color:#C0C0C0">84.1</td>
-</tr>
-<tr><td align="left">Places205</td>
-<td align="center">63.9</td>
-<td align="center">65.8</td>
-<td align="center">65.9</td>
-<td align="center"><b>66.8</b></td>
-<td align="center" style="color:#C0C0C0">66.0</td>
-</tr>
-<tr><td align="left">Places365</td>
-<td align="center">57.9</td>
-<td align="center">59.4</td>
-<td align="center">59.8</td>
-<td align="center"><b>60.3</b></td>
-<td align="center" style="color:#C0C0C0">58.0</td>
-</tr>
-</tbody></table>
+You must configure API keys and data paths before running experiments.
 
-### Pre-training
+**Option A: Environment Variables**
 
-The pre-training instruction is in [PRETRAIN.md](PRETRAIN.md).
+```env
+# --- For W&B Experiment Tracking ---
+WANDB_API_KEY="your-wandb-key"
+```
 
-### License
+**Option B: Dataset Preparation**
 
-This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for details.
-=======
-# MInM-code
+- **ImageNet-1K**: Download and organize into `train/` and `val/` directories following the [PyTorch ImageNet format](https://pytorch.org/vision/stable/datasets.html#imagenet).
+- **ImageNette / ImageWoof**: Automatically downloaded and extracted by the training scripts from HuggingFace.
+
+## 🔧 Instance Mask Generation
+
+Generate SAM-based instance masks for your dataset. This is a prerequisite for MInM pre-training.
+
+> _Requires the [Segment Anything Model (SAM)](https://github.com/facebookresearch/segment-anything)._
+
+```bash
+# Generate instance masks for ImageWoof
+python tools/generate_sam_masks.py \
+  --dataset imagewoof \
+  --output_dir data/imagewoof/instance_masks
+```
+
+## 🧪 Experiments & Reproducibility
+
+### 1. MInM Pre-training
+
+Pre-train a ViT with instance-guided masking on ImageNette or ImageWoof.
+
+```bash
+# MInM on ImageNette (ViT-Base, 125 epochs)
+python tools/train_imagenette.py \
+  --epochs 125 \
+  --batch_size 32 \
+  --blr 1.5e-3 \
+  --model mae_vit_base_patch16
+
+# MInM on ImageWoof (ViT-Base, 125 epochs)
+python tools/train_imagewoof.py \
+  --epochs 125 \
+  --batch_size 32 \
+  --blr 1.5e-3 \
+  --model mae_vit_base_patch16
+```
+
+### 2. MAE Baseline Pre-training
+
+Train the standard MAE baseline for comparison.
+
+```bash
+# MAE on ImageNette
+python tools/train_imagenette_mae.py \
+  --epochs 125 \
+  --batch_size 32 \
+  --blr 1.5e-3 \
+  --model mae_vit_base_patch16
+
+# MAE on ImageNet-1K (multi-node)
+python tools/submitit_pretrain.py \
+  --job_dir ./output \
+  --nodes 8 \
+  --batch_size 64 \
+  --model mae_vit_large_patch16 \
+  --mask_ratio 0.75 \
+  --norm_pix_loss \
+  --epochs 800
+```
+
+### 3. Linear Probing
+
+Evaluate the quality of learned representations by training a linear classifier on frozen features.
+
+```bash
+python tools/main_linprobe.py \
+  --batch_size 512 \
+  --model vit_base_patch16 \
+  --finetune /path/to/pretrain_checkpoint.pth \
+  --epochs 90 \
+  --data_path /path/to/imagenet
+```
+
+### 4. Fine-tuning
+
+Fine-tune the pre-trained model end-to-end for downstream classification.
+
+```bash
+python tools/main_finetune.py \
+  --batch_size 32 \
+  --model vit_base_patch16 \
+  --finetune /path/to/pretrain_checkpoint.pth \
+  --epochs 100 \
+  --data_path /path/to/imagenet
+```
+
+## 📊 Results
+
+### Pre-trained Checkpoints
+
+| | ViT-Base | ViT-Large | ViT-Huge |
+|:---|:---:|:---:|:---:|
+| MAE (Baseline) | [download](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth) | [download](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_large.pth) | [download](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_huge.pth) |
+| MInM (Ours) | coming soon | coming soon | coming soon |
+
+### ImageNet-1K Classification
+
+| Method | ViT-B (Linear Probe) | ViT-B (Fine-tune) |
+|:---|:---:|:---:|
+| MAE | — | 83.6 |
+| MInM (Ours) | — | — |
+
+> _Results will be updated upon paper acceptance._
+
+## 📁 Directory Structure
+
+```text
+.
+├── assets/                  # Images for README
+├── models/                  # Model architectures
+│   ├── models_mae.py        # Standard MAE (ViT encoder-decoder)
+│   ├── models_minm.py       # MInM with InstanceGuidedMasking
+│   └── models_vit.py        # Vision Transformer utilities
+├── engine/                  # Training & evaluation loops
+│   ├── engine_pretrain.py   # MAE pre-training loop
+│   ├── engine_pretrain_minm.py  # MInM pre-training loop
+│   ├── engine_finetune.py   # Fine-tuning loop
+│   └── engine_probing.py    # Linear probing evaluation
+├── tools/                   # Entry-point scripts
+│   ├── train_imagenette.py  # MInM training on ImageNette
+│   ├── train_imagewoof.py   # MInM training on ImageWoof
+│   ├── train_imagenette_mae.py  # MAE baseline on ImageNette
+│   ├── generate_sam_masks.py    # SAM instance mask generation
+│   ├── main_pretrain.py     # MAE pre-training (ImageNet)
+│   ├── main_finetune.py     # Fine-tuning script
+│   ├── main_linprobe.py     # Linear probing script
+│   └── submitit_*.py        # Distributed training wrappers
+├── util/                    # Utilities (LR scheduling, LARS, etc.)
+├── data/                    # Dataset storage
+│   ├── imagenette/          # ImageNette + SAM masks
+│   └── imagewoof/           # ImageWoof + SAM masks
+├── configs/                 # Configuration YAMLs
+├── docs/                    # Additional documentation
+│   ├── PRETRAIN.md          # Pre-training instructions
+│   └── FINETUNE.md          # Fine-tuning instructions
+├── demo/                    # Visualization demos
+├── output/                  # Checkpoints & logs
+├── requirements.txt         # Python dependencies
+└── LICENSE                  # CC-BY-NC 4.0
+```
+
+## Acknowledgements
+
+We acknowledge the use of the following resources:
+
+- [**MAE**](https://github.com/facebookresearch/mae): Masked Autoencoders Are Scalable Vision Learners.
+- [**SAM**](https://github.com/facebookresearch/segment-anything): Segment Anything Model for instance mask generation.
+- [**DeiT**](https://github.com/facebookresearch/deit): Data-efficient Image Transformers.
+- [**timm**](https://github.com/rwightman/pytorch-image-models): PyTorch Image Models.
+
+## License
+
+This project is licensed under the [CC-BY-NC 4.0 License](LICENSE).
