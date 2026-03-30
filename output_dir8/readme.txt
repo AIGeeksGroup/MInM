@@ -1,3 +1,0 @@
-vit-base
-imagenette
-mae

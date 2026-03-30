@@ -1,19 +1,43 @@
-*.pth
-output_dir/
-output_dir2/
-output_dir3/
-output_dir4/
-MinM/
-val/
-wandb/
-*.log
-output_dir7/
-output_dir8/
-output_dir9/
-output_dir10/
-output_dirminm/
-output_dir1kminm/
-output_images/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
 
-minm_mae/
-MinM/
+# Training outputs
+output_*/
+output/
+
+# Logs
+*.log
+*.err
+*.out
+
+# Model weights
+*.pth
+
+# Data
+data/
+
+# Wandb
+wandb/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Debug / temp
+debug_vis/
+...image*.png
+log.txt
+progress.txt
+
+# OS
+.DS_Store
+Thumbs.db
