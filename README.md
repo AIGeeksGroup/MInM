@@ -10,7 +10,7 @@ This is the official repository for the paper:
 >
 > <sup>1</sup>Equal contribution, co-first authors. <sup>2</sup>Project lead. <sup>*</sup>Corresponding author.
 >
-> ### [Paper](https://arxiv.org/) | [HF Paper](https://huggingface.co/papers/)
+> ### [Paper](https://arxiv.org/) | [HF Paper](https://huggingface.co/papers/) | [Model](https://huggingface.co/AIGeeksGroup/MInM)
 
 > [!NOTE]
 > _⚠️ **Repository Structure**: This repo contains the **MInM pre-training framework** (extending MAE with instance-guided masking) and evaluation pipelines for **ImageNet-1K**, **Pascal VOC**, and **Imagenette**._
